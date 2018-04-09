@@ -1,5 +1,5 @@
 /*!
- * Bootstrap v4.0.0 (https://getbootstrap.com)
+ * Bootstrap v4.0.0 (https://getbootstrap.com/)
  * Copyright 2011-2018 The Bootstrap Authors
  * Copyright 2011-2018 Twitter, Inc.
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
@@ -4560,6 +4560,8 @@ input[type="button"].btn-block {
     -webkit-column-gap: 1.25rem;
     -moz-column-gap: 1.25rem;
     column-gap: 1.25rem;
+    orphans: 1;
+    widows: 1;
   }
   .card-columns .card {
     display: inline-block;
@@ -4599,10 +4601,13 @@ input[type="button"].btn-block {
   border-radius: 0.25rem;
 }
 
+.breadcrumb-item + .breadcrumb-item {
+  padding-left: 0.5rem;
+}
+
 .breadcrumb-item + .breadcrumb-item::before {
   display: inline-block;
   padding-right: 0.5rem;
-  padding-left: 0.5rem;
   color: #6c757d;
   content: "/";
 }
@@ -6495,6 +6500,26 @@ button.bg-dark:focus {
   flex: 1 1 auto !important;
 }
 
+.flex-grow-0 {
+  -ms-flex-positive: 0 !important;
+  flex-grow: 0 !important;
+}
+
+.flex-grow-1 {
+  -ms-flex-positive: 1 !important;
+  flex-grow: 1 !important;
+}
+
+.flex-shrink-0 {
+  -ms-flex-negative: 0 !important;
+  flex-shrink: 0 !important;
+}
+
+.flex-shrink-1 {
+  -ms-flex-negative: 1 !important;
+  flex-shrink: 1 !important;
+}
+
 .justify-content-start {
   -ms-flex-pack: start !important;
   justify-content: flex-start !important;
@@ -6638,6 +6663,22 @@ button.bg-dark:focus {
     -ms-flex: 1 1 auto !important;
     flex: 1 1 auto !important;
   }
+  .flex-sm-grow-0 {
+    -ms-flex-positive: 0 !important;
+    flex-grow: 0 !important;
+  }
+  .flex-sm-grow-1 {
+    -ms-flex-positive: 1 !important;
+    flex-grow: 1 !important;
+  }
+  .flex-sm-shrink-0 {
+    -ms-flex-negative: 0 !important;
+    flex-shrink: 0 !important;
+  }
+  .flex-sm-shrink-1 {
+    -ms-flex-negative: 1 !important;
+    flex-shrink: 1 !important;
+  }
   .justify-content-sm-start {
     -ms-flex-pack: start !important;
     justify-content: flex-start !important;
@@ -6760,6 +6801,22 @@ button.bg-dark:focus {
   .flex-md-fill {
     -ms-flex: 1 1 auto !important;
     flex: 1 1 auto !important;
+  }
+  .flex-md-grow-0 {
+    -ms-flex-positive: 0 !important;
+    flex-grow: 0 !important;
+  }
+  .flex-md-grow-1 {
+    -ms-flex-positive: 1 !important;
+    flex-grow: 1 !important;
+  }
+  .flex-md-shrink-0 {
+    -ms-flex-negative: 0 !important;
+    flex-shrink: 0 !important;
+  }
+  .flex-md-shrink-1 {
+    -ms-flex-negative: 1 !important;
+    flex-shrink: 1 !important;
   }
   .justify-content-md-start {
     -ms-flex-pack: start !important;
@@ -6884,6 +6941,22 @@ button.bg-dark:focus {
     -ms-flex: 1 1 auto !important;
     flex: 1 1 auto !important;
   }
+  .flex-lg-grow-0 {
+    -ms-flex-positive: 0 !important;
+    flex-grow: 0 !important;
+  }
+  .flex-lg-grow-1 {
+    -ms-flex-positive: 1 !important;
+    flex-grow: 1 !important;
+  }
+  .flex-lg-shrink-0 {
+    -ms-flex-negative: 0 !important;
+    flex-shrink: 0 !important;
+  }
+  .flex-lg-shrink-1 {
+    -ms-flex-negative: 1 !important;
+    flex-shrink: 1 !important;
+  }
   .justify-content-lg-start {
     -ms-flex-pack: start !important;
     justify-content: flex-start !important;
@@ -7006,6 +7079,22 @@ button.bg-dark:focus {
   .flex-xl-fill {
     -ms-flex: 1 1 auto !important;
     flex: 1 1 auto !important;
+  }
+  .flex-xl-grow-0 {
+    -ms-flex-positive: 0 !important;
+    flex-grow: 0 !important;
+  }
+  .flex-xl-grow-1 {
+    -ms-flex-positive: 1 !important;
+    flex-grow: 1 !important;
+  }
+  .flex-xl-shrink-0 {
+    -ms-flex-negative: 0 !important;
+    flex-shrink: 0 !important;
+  }
+  .flex-xl-shrink-1 {
+    -ms-flex-negative: 1 !important;
+    flex-shrink: 1 !important;
   }
   .justify-content-xl-start {
     -ms-flex-pack: start !important;
@@ -7221,6 +7310,22 @@ button.bg-dark:focus {
   overflow: visible;
   clip: auto;
   white-space: normal;
+}
+
+.shadow-sm {
+  box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075) !important;
+}
+
+.shadow {
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15) !important;
+}
+
+.shadow-lg {
+  box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.175) !important;
+}
+
+.shadow-none {
+  box-shadow: none !important;
 }
 
 .w-25 {
@@ -8583,6 +8688,10 @@ button.bg-dark:focus {
   }
 }
 
+.text-monospace {
+  font-family: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+}
+
 .text-justify {
   text-align: justify !important;
 }
@@ -8753,8 +8862,20 @@ a.text-dark:hover, a.text-dark:focus {
   color: #1d2124 !important;
 }
 
+.text-body {
+  color: #212529 !important;
+}
+
 .text-muted {
   color: #6c757d !important;
+}
+
+.text-black-50 {
+  color: rgba(0, 0, 0, 0.5) !important;
+}
+
+.text-white-50 {
+  color: rgba(255, 255, 255, 0.5) !important;
 }
 
 .text-hide {
