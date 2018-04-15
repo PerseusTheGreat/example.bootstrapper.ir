@@ -1326,7 +1326,7 @@
           var $this = $$$1(this);
           var data = $this.data(DATA_KEY);
 
-          var _config = _objectSpread({}, Default, $this.data(), typeof config === 'object' && config);
+          var _config = _objectSpread({}, Default, $this.data(), typeof config === 'object' && config ? config : {});
 
           if (!data && _config.toggle && /show|hide/.test(config)) {
             _config.toggle = false;
@@ -2373,7 +2373,7 @@
         return this.each(function () {
           var data = $$$1(this).data(DATA_KEY);
 
-          var _config = _objectSpread({}, Modal.Default, $$$1(this).data(), typeof config === 'object' && config);
+          var _config = _objectSpread({}, Default, $$$1(this).data(), typeof config === 'object' && config ? config : {});
 
           if (!data) {
             data = new Modal(this, _config);
@@ -2980,7 +2980,7 @@
       };
 
       _proto._getConfig = function _getConfig(config) {
-        config = _objectSpread({}, this.constructor.Default, $$$1(this.element).data(), config);
+        config = _objectSpread({}, this.constructor.Default, $$$1(this.element).data(), typeof config === 'object' && config ? config : {});
 
         if (typeof config.delay === 'number') {
           config.delay = {
@@ -3466,7 +3466,7 @@
 
 
       _proto._getConfig = function _getConfig(config) {
-        config = _objectSpread({}, Default, config);
+        config = _objectSpread({}, Default, typeof config === 'object' && config ? config : {});
 
         if (typeof config.target !== 'string') {
           var id = $$$1(config.target).attr('id');
