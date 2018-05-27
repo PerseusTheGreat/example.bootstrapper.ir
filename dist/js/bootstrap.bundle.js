@@ -62,7 +62,8 @@
   }
 
   function _inheritsLoose(subClass, superClass) {
-    subClass.prototype.__proto__ = superClass && superClass.prototype;
+    subClass.prototype = Object.create(superClass.prototype);
+    subClass.prototype.constructor = subClass;
     subClass.__proto__ = superClass;
   }
 
@@ -5706,6 +5707,8 @@
     var Popover =
     /*#__PURE__*/
     function (_Tooltip) {
+      _inheritsLoose(Popover, _Tooltip);
+
       function Popover() {
         return _Tooltip.apply(this, arguments) || this;
       }
@@ -5818,8 +5821,6 @@
           return DefaultType;
         }
       }]);
-
-      _inheritsLoose(Popover, _Tooltip);
 
       return Popover;
     }(Tooltip);
