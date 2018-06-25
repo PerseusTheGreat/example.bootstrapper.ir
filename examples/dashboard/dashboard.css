@@ -33,13 +33,14 @@ body {
 
 /* External BUG: Microsift Edge does not show sticky element on rtl direction*/
 /* https://developer.microsoft.com/en-us/microsoft-edge/platform/issues/15754013/ */
-/* So I mark below css as commented! */
-/*@supports ((position: -webkit-sticky) or (position: sticky)) {
+/* So, in 16 you should mark below css rule as commented! */
+/* But, this issue has been resolved in Edge 17 */
+@supports ((position: -webkit-sticky) or (position: sticky)) {
     .sidebar-sticky {
         position: -webkit-sticky;
         position: sticky;
     }
-}*/
+}
 
 .sidebar .nav-link {
     font-weight: 500;
@@ -70,12 +71,12 @@ body {
  */
 
 [role="main"] {
-    padding-top: 48px; /* Space for fixed navbar */
+    padding-top: 133px; /* Space for fixed navbar */
 }
 
-@media (max-width: 768px) {
+@media (min-width: 768px) {
     [role="main"] {
-        padding-top: 133px; /* Space for fixed navbar + search input + sign out link*/
+        padding-top: 48px; /* Space for fixed navbar + search input + sign out link*/
     }
 }
 

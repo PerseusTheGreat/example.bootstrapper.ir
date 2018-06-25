@@ -9,10 +9,8 @@ body {
 }
 
 body {
-    display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
-    -webkit-box-align: center;
     -ms-flex-align: center;
     align-items: center;
     padding-top: 40px;
@@ -49,7 +47,6 @@ body {
     color: #495057;
     border: 1px solid transparent;
     border-radius: .25rem;
-    -webkit-transition: all .1s ease-in-out;
     transition: all .1s ease-in-out;
 }
 
@@ -57,11 +54,15 @@ body {
     color: transparent;
 }
 
-.form-label-group input::-ms-input-placeholder {
+.form-label-group input::-moz-placeholder {
     color: transparent;
 }
 
 .form-label-group input:-ms-input-placeholder {
+    color: transparent;
+}
+
+.form-label-group input::-ms-input-placeholder {
     color: transparent;
 }
 
@@ -79,4 +80,28 @@ body {
     padding-bottom: calc(var(--input-padding-y) / 3);
     font-size: 12px;
     color: #777;
+}
+
+/* Fallback for Edge
+-------------------------------------------------- */
+@supports (-ms-ime-align: auto) {
+    .form-label-group > label {
+        display: none;
+    }
+
+    .form-label-group input::-ms-input-placeholder {
+        color: #777;
+    }
+}
+
+/* Fallback for IE
+-------------------------------------------------- */
+@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+    .form-label-group > label {
+        display: none;
+    }
+
+    .form-label-group input:-ms-input-placeholder {
+        color: #777;
+    }
 }

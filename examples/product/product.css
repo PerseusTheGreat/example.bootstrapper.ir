@@ -3,8 +3,8 @@
 }
 
 /*
- * Custom translucent site header
- */
+* Custom translucent site header
+*/
 
 .site-header {
     background-color: rgba(0, 0, 0, .85);
@@ -14,7 +14,6 @@
 
 .site-header a {
     color: #999;
-    -webkit-transition: ease-in-out color .15s;
     transition: ease-in-out color .15s;
 }
 
@@ -24,8 +23,8 @@
 }
 
 /*
- * Dummy devices (replace them with your own or something else entirely!)
- */
+* Dummy devices (replace them with your own or something else entirely!)
+*/
 
 .product-device {
     position: absolute;
@@ -61,8 +60,8 @@
 
 
 /*
- * Extra utilities
- */
+* Extra utilities
+*/
 
 .border-top {
     border-top: 1px solid #e5e5e5;
@@ -73,20 +72,17 @@
 }
 
 .box-shadow {
-    -webkit-box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05);
     box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05);
 }
 
 .flex-equal > * {
     -ms-flex: 1;
-    -webkit-box-flex: 1;
     flex: 1;
 }
 
 @media (min-width: 768px) {
     .flex-md-equal > * {
         -ms-flex: 1;
-        -webkit-box-flex: 1;
         flex: 1;
     }
 }
