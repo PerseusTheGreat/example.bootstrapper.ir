@@ -12,6 +12,15 @@
     backdrop-filter: saturate(180%) blur(20px);
 }
 
+/* External BUG: Microsift Edge does not show sticky element on rtl direction*/
+/* https://developer.microsoft.com/en-us/microsoft-edge/platform/issues/15754013/ */
+/* So, in Edge ,I use relative position */
+@supports (-ms-ime-align:auto) {
+    .site-header {
+        position: relative;
+    }
+}
+
 .site-header a {
     color: #999;
     transition: ease-in-out color .15s;
@@ -64,14 +73,17 @@
  */
 
 .flex-equal > * {
-  -ms-flex: 1;
-  flex: 1;
-}
-@media (min-width: 768px) {
-  .flex-md-equal > * {
     -ms-flex: 1;
     flex: 1;
-  }
 }
 
-.overflow-hidden { overflow: hidden; }
+@media (min-width: 768px) {
+    .flex-md-equal > * {
+        -ms-flex: 1;
+        flex: 1;
+    }
+}
+
+.overflow-hidden {
+    overflow: hidden;
+}
