@@ -54,9 +54,9 @@
                 <li class="nav-item">
                     <a class="nav-link" href="https://themes.getbootstrap.com" target="_blank" rel="noopener">Themes</a>
                 </li>
-                <li class="nav-item">
+                <!--<li class="nav-item">
                     <a class="nav-link" href="https://jobs.getbootstrap.com" target="_blank" rel="noopener">Jobs</a>
-                </li>
+                </li>-->
                 <li class="nav-item">
                     <a class="nav-link" href="https://expo.getbootstrap.com" target="_blank" rel="noopener">Expo</a>
                 </li>
@@ -68,16 +68,21 @@
 
         <ul class="navbar-nav flex-row mr-md-auto d-none d-md-flex">
             <li class="nav-item dropdown">
-                <a class="nav-item nav-link dropdown-toggle ml-md-2" href="#" id="bd-versions" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">v4.1</a>
+                <a class="nav-item nav-link dropdown-toggle ml-md-2"
+                   href="#"
+                   id="bd-versions"
+                   data-toggle="dropdown"
+                   aria-haspopup="true"
+                   aria-expanded="false">v4.1</a>
                 <div class="dropdown-menu dropdown-menu-left" aria-labelledby="bd-versions">
-                  <a class="dropdown-item active" href="https://getbootstrap.com/docs/4.1/">Latest (4.1.x)</a>
-                  <a class="dropdown-item" href="https://getbootstrap.com/docs/4.0/">v4.0.0</a>
-                  <div class="dropdown-divider"></div>
-                  <a class="dropdown-item" href="https://v4-alpha.getbootstrap.com/">v4 Alpha 6</a>
-                  <a class="dropdown-item" href="https://getbootstrap.com/docs/3.3/">v3.3.7</a>
-                  <a class="dropdown-item" href="https://getbootstrap.com/2.3.2/">v2.3.2</a>
+                    <a class="dropdown-item active" href="https://getbootstrap.com/docs/4.1/">Latest (4.1.x)</a>
+                    <a class="dropdown-item" href="https://getbootstrap.com/docs/4.0/">v4.0.0</a>
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item" href="https://v4-alpha.getbootstrap.com/">v4 Alpha 6</a>
+                    <a class="dropdown-item" href="https://getbootstrap.com/docs/3.3/">v3.3.7</a>
+                    <a class="dropdown-item" href="https://getbootstrap.com/2.3.2/">v2.3.2</a>
                 </div>
-              </li>
+            </li>
 
             <li class="nav-item">
                 <a class="nav-link p-2" href="https://github.com/twbs/bootstrap" target="_blank" rel="noopener" aria-label="GitHub">
@@ -87,6 +92,7 @@
                     </svg>
                 </a>
             </li>
+
             <li class="nav-item">
                 <a class="nav-link p-2" href="https://twitter.com/getbootstrap" target="_blank" rel="noopener" aria-label="Twitter">
                     <svg class="navbar-nav-svg" xmlns="http://www.w3.org/2000/svg" viewbox="0 0 512 416.32" focusable="false">
@@ -95,6 +101,7 @@
                     </svg>
                 </a>
             </li>
+
             <li class="nav-item">
                 <a class="nav-link p-2" href="https://bootstrap-slack.herokuapp.com" target="_blank" rel="noopener" aria-label="Slack">
                     <svg class="navbar-nav-svg" xmlns="http://www.w3.org/2000/svg" viewbox="0 0 512 512" focusable="false">
@@ -106,239 +113,184 @@
             </li>
         </ul>
 
-        <a class="btn btn-bd-download d-none d-lg-inline-block mb-3 mb-md-0 mr-md-3" href="archive/bootstrap-4.1.1-plus-rtl-rev.9-dist.zip" target="_blank">Download RTL</a>
+        <a class="btn btn-bd-download d-none d-lg-inline-block mb-3 mb-md-0 mr-md-3"
+           href="archive/bootstrap-4.1.2-plus-rtl-rev.1-dist.zip"
+           target="_blank">Download RTL</a>
     </header>
 
-    <main id="content" role="main">
-        <header class="d-flex flex-column flex-md-row align-items-md-center p-5 bg-light">
-            <div class="pt-md-3 pb-md-4">
-                <h1 class="bd-title mt-0">RTL Examples</h1>
-                <p class="bd-lead">Quickly get a project started with any of our examples ranging from using parts of the framework to custom components and layouts.</p>
-                <a href="archive/bootstrap-4.1.1-plus-rtl-rev.9-dist.zip" class="btn btn-lg btn-bd-primary">Download RTL Distribution</a>
+    <header class="d-flex flex-column flex-md-row align-items-md-center p-5 bg-light">
+        <div class="pt-md-3 pb-md-4">
+            <h1 class="bd-title mt-0">RTL Examples</h1>
+            <p class="bd-lead">Quickly get a project started with any of our examples ranging from using parts of the framework to custom components and layouts.</p>
+            <a href="archive/bootstrap-4.1.2-plus-rtl-rev.1-dist.zip" class="btn btn-lg btn-bd-primary">Download RTL Distribution</a>
+        </div>
+    </header>
+
+    <main class="bd-content p-5" id="content" role="main">
+
+        <h2>Custom components</h2>
+        <p>Brand new components and templates to help folks quickly get started with Bootstrap and demonstrate best practices for adding onto the framework.</p>
+
+        <div class="row">
+            <div class="col-sm-6 col-md-4 col-xl-3 mb-3">
+                <a href="examples/album/">
+                    <img class="img-thumbnail mb-3" src="examples/screenshots/album.png" alt="Album screenshot" width="960" height="600" />
+                    <h5 class="mb-1">Album</h5>
+                </a>
+                <p class="text-muted">Simple one-page template for photo galleries, portfolios, and more.</p>
             </div>
-        </header>
-
-        <main class="bd-content p-5" role="main">
-
-            <h2>Custom components</h2>
-            <p>Brand new components and templates to help folks quickly get started with Bootstrap and demonstrate best practices for adding onto the framework.</p>
-
-            <div class="row">
-                <div class="col-sm-6 col-md-4 col-xl-3 mb-3">
-                    <a href="examples/album/">
-                        <img class="img-thumbnail mb-3" src="examples/screenshots/album.png" alt="Album screenshot" width="960" height="600" />
-                        <h5 class="mb-1">Album</h5>
-                    </a>
-                    <p class="text-muted">Simple one-page template for photo galleries, portfolios, and more.</p>
-                </div>
-
-
-
-                <div class="col-sm-6 col-md-4 col-xl-3 mb-3">
-                    <a href="examples/pricing/">
-                        <img class="img-thumbnail mb-3" src="examples/screenshots/pricing.png" alt="Pricing screenshot" width="960" height="600" />
-                        <h5 class="mb-1">Pricing</h5>
-                    </a>
-                    <p class="text-muted">Example pricing page built with Cards and featuring a custom header and footer.</p>
-                </div>
-
-
-
-                <div class="col-sm-6 col-md-4 col-xl-3 mb-3">
-                    <a href="examples/checkout/">
-                        <img class="img-thumbnail mb-3" src="examples/screenshots/checkout.png" alt="Checkout screenshot" width="960" height="600" />
-                        <h5 class="mb-1">Checkout</h5>
-                    </a>
-                    <p class="text-muted">Custom checkout form showing our form components and their validation features.</p>
-                </div>
-
-
-
-                <div class="col-sm-6 col-md-4 col-xl-3 mb-3">
-                    <a href="examples/product/">
-                        <img class="img-thumbnail mb-3" src="examples/screenshots/product.png" alt="Product screenshot" width="960" height="600" />
-                        <h5 class="mb-1">Product</h5>
-                    </a>
-                    <p class="text-muted">Lean product-focused marketing page with extensive grid and image work.</p>
-                </div>
-
-
-
-                <div class="col-sm-6 col-md-4 col-xl-3 mb-3">
-                    <a href="examples/cover/">
-                        <img class="img-thumbnail mb-3" src="examples/screenshots/cover.png" alt="Cover screenshot" width="960" height="600" />
-                        <h5 class="mb-1">Cover</h5>
-                    </a>
-                    <p class="text-muted">A one-page template for building simple and beautiful home pages.</p>
-                </div>
-
-
-
-                <div class="col-sm-6 col-md-4 col-xl-3 mb-3">
-                    <a href="examples/carousel/">
-                        <img class="img-thumbnail mb-3" src="examples/screenshots/carousel.png" alt="Carousel screenshot" width="960" height="600" />
-                        <h5 class="mb-1">Carousel</h5>
-                    </a>
-                    <p class="text-muted">Customize the navbar and carousel, then add some new components.</p>
-                </div>
-
-
-
-                <div class="col-sm-6 col-md-4 col-xl-3 mb-3">
-                    <a href="examples/blog/">
-                        <img class="img-thumbnail mb-3" src="examples/screenshots/blog.png" alt="Blog screenshot" width="960" height="600" />
-                        <h5 class="mb-1">Blog</h5>
-                    </a>
-                    <p class="text-muted">Magazine like blog template with header, navigation, featured content.</p>
-                </div>
-
-
-
-                <div class="col-sm-6 col-md-4 col-xl-3 mb-3">
-                    <a href="examples/dashboard/">
-                        <img class="img-thumbnail mb-3" src="examples/screenshots/dashboard.png" alt="Dashboard screenshot" width="960" height="600" />
-                        <h5 class="mb-1">Dashboard</h5>
-                    </a>
-                    <p class="text-muted">Basic admin dashboard shell with fixed sidebar and navbar.</p>
-                </div>
-
-
-
-                <div class="col-sm-6 col-md-4 col-xl-3 mb-3">
-                    <a href="examples/sign-in/">
-                        <img class="img-thumbnail mb-3" src="examples/screenshots/sign-in.png" alt="Sign-in screenshot" width="960" height="600" />
-                        <h5 class="mb-1">Sign-in</h5>
-                    </a>
-                    <p class="text-muted">Custom form layout and design for a simple sign in form.</p>
-                </div>
-
-
-
-                <div class="col-sm-6 col-md-4 col-xl-3 mb-3">
-                    <a href="examples/sticky-footer/">
-                        <img class="img-thumbnail mb-3" src="examples/screenshots/sticky-footer.png" alt="Sticky footer screenshot" width="960" height="600" />
-                        <h5 class="mb-1">Sticky footer</h5>
-                    </a>
-                    <p class="text-muted">Attach a footer to the bottom of the viewport when page content is short.</p>
-                </div>
-
-
-
-                <div class="col-sm-6 col-md-4 col-xl-3 mb-3">
-                    <a href="examples/sticky-footer-navbar/">
-                        <img class="img-thumbnail mb-3" src="examples/screenshots/sticky-footer-navbar.png" alt="Sticky footer navbar screenshot" width="960" height="600" />
-                        <h5 class="mb-1">Sticky footer navbar</h5>
-                    </a>
-                    <p class="text-muted">Attach a footer to the bottom of the viewport with a fixed top navbar.</p>
-                </div>
+            <div class="col-sm-6 col-md-4 col-xl-3 mb-3">
+                <a href="examples/pricing/">
+                    <img class="img-thumbnail mb-3" src="examples/screenshots/pricing.png" alt="Pricing screenshot" width="960" height="600" />
+                    <h5 class="mb-1">Pricing</h5>
+                </a>
+                <p class="text-muted">Example pricing page built with Cards and featuring a custom header and footer.</p>
             </div>
-
-
-            <h2>Framework</h2>
-            <p>Examples that focus on implementing uses of built-in components provided by Bootstrap.</p>
-
-            <div class="row">
-                <div class="col-sm-6 col-md-4 col-xl-3 mb-3">
-                    <a href="examples/starter-template/">
-                        <img class="img-thumbnail mb-3" src="examples/screenshots/starter-template.png" alt="Starter template screenshot" width="960" height="600" />
-                        <h5 class="mb-1">Starter template</h5>
-                    </a>
-                    <p class="text-muted">Nothing but the basics: compiled CSS and JavaScript.</p>
-                </div>
-
-
-
-                <div class="col-sm-6 col-md-4 col-xl-3 mb-3">
-                    <a href="examples/grid/">
-                        <img class="img-thumbnail mb-3" src="examples/screenshots/grid.png" alt="Grid screenshot" width="960" height="600" />
-                        <h5 class="mb-1">Grid</h5>
-                    </a>
-                    <p class="text-muted">Multiple examples of grid layouts with all four tiers, nesting, and more.</p>
-                </div>
-
-
-
-                <div class="col-sm-6 col-md-4 col-xl-3 mb-3">
-                    <a href="examples/jumbotron/">
-                        <img class="img-thumbnail mb-3" src="examples/screenshots/jumbotron.png" alt="Jumbotron screenshot" width="960" height="600" />
-                        <h5 class="mb-1">Jumbotron</h5>
-                    </a>
-                    <p class="text-muted">Build around the jumbotron with a navbar and some basic grid columns.</p>
-                </div>
+            <div class="col-sm-6 col-md-4 col-xl-3 mb-3">
+                <a href="examples/checkout/">
+                    <img class="img-thumbnail mb-3" src="examples/screenshots/checkout.png" alt="Checkout screenshot" width="960" height="600" />
+                    <h5 class="mb-1">Checkout</h5>
+                </a>
+                <p class="text-muted">Custom checkout form showing our form components and their validation features.</p>
             </div>
-
-
-            <h2>Navbars</h2>
-            <p>Taking the default navbar component and showing how it can be moved, placed, and extended.</p>
-
-            <div class="row">
-                <div class="col-sm-6 col-md-4 col-xl-3 mb-3">
-                    <a href="examples/navbars/">
-                        <img class="img-thumbnail mb-3" src="examples/screenshots/navbars.png" alt="Navbars screenshot" width="960" height="600" />
-                        <h5 class="mb-1">Navbars</h5>
-                    </a>
-                    <p class="text-muted">Demonstration of all responsive and container options for the navbar.</p>
-                </div>
-
-
-
-                <div class="col-sm-6 col-md-4 col-xl-3 mb-3">
-                    <a href="examples/navbar-static/">
-                        <img class="img-thumbnail mb-3" src="examples/screenshots/navbar-static.png" alt="Navbar static screenshot" width="960" height="600" />
-                        <h5 class="mb-1">Navbar static</h5>
-                    </a>
-                    <p class="text-muted">Single navbar example of a static top navbar along with some additional content.</p>
-                </div>
-
-
-
-                <div class="col-sm-6 col-md-4 col-xl-3 mb-3">
-                    <a href="examples/navbar-fixed/">
-                        <img class="img-thumbnail mb-3" src="examples/screenshots/navbar-fixed.png" alt="Navbar fixed screenshot" width="960" height="600" />
-                        <h5 class="mb-1">Navbar fixed</h5>
-                    </a>
-                    <p class="text-muted">Single navbar example with a fixed top navbar along with some additional content.</p>
-                </div>
-
-
-
-                <div class="col-sm-6 col-md-4 col-xl-3 mb-3">
-                    <a href="examples/navbar-bottom/">
-                        <img class="img-thumbnail mb-3" src="examples/screenshots/navbar-bottom.png" alt="Navbar bottom screenshot" width="960" height="600" />
-                        <h5 class="mb-1">Navbar bottom</h5>
-                    </a>
-                    <p class="text-muted">Single navbar example with a bottom navbar along with some additional content.</p>
-                </div>
+            <div class="col-sm-6 col-md-4 col-xl-3 mb-3">
+                <a href="examples/product/">
+                    <img class="img-thumbnail mb-3" src="examples/screenshots/product.png" alt="Product screenshot" width="960" height="600" />
+                    <h5 class="mb-1">Product</h5>
+                </a>
+                <p class="text-muted">Lean product-focused marketing page with extensive grid and image work.</p>
             </div>
-
-
-            <h2>Experiments</h2>
-            <p>Examples that focus on future-friendly features or techniques.</p>
-
-            <div class="row">
-                <div class="col-sm-6 col-md-4 col-xl-3 mb-3">
-                    <a href="examples/floating-labels/">
-                        <img class="img-thumbnail mb-3" src="examples/screenshots/floating-labels.png" alt="Floating labels screenshot" width="960" height="600" />
-                        <h5 class="mb-1">Floating labels</h5>
-                    </a>
-                    <p class="text-muted">Beautifully simple forms with floating labels over your inputs.</p>
-                </div>
-
-
-
-                <div class="col-sm-6 col-md-4 col-xl-3 mb-3">
-                    <a href="examples/offcanvas/">
-                        <img class="img-thumbnail mb-3" src="examples/screenshots/offcanvas.png" alt="Offcanvas screenshot" width="960" height="600" />
-                        <h5 class="mb-1">Offcanvas</h5>
-                    </a>
-                    <p class="text-muted">Turn your expandable navbar into a sliding offcanvas menu.</p>
-                </div>
+            <div class="col-sm-6 col-md-4 col-xl-3 mb-3">
+                <a href="examples/cover/">
+                    <img class="img-thumbnail mb-3" src="examples/screenshots/cover.png" alt="Cover screenshot" width="960" height="600" />
+                    <h5 class="mb-1">Cover</h5>
+                </a>
+                <p class="text-muted">A one-page template for building simple and beautiful home pages.</p>
             </div>
+            <div class="col-sm-6 col-md-4 col-xl-3 mb-3">
+                <a href="examples/carousel/">
+                    <img class="img-thumbnail mb-3" src="examples/screenshots/carousel.png" alt="Carousel screenshot" width="960" height="600" />
+                    <h5 class="mb-1">Carousel</h5>
+                </a>
+                <p class="text-muted">Customize the navbar and carousel, then add some new components.</p>
+            </div>
+            <div class="col-sm-6 col-md-4 col-xl-3 mb-3">
+                <a href="examples/blog/">
+                    <img class="img-thumbnail mb-3" src="examples/screenshots/blog.png" alt="Blog screenshot" width="960" height="600" />
+                    <h5 class="mb-1">Blog</h5>
+                </a>
+                <p class="text-muted">Magazine like blog template with header, navigation, featured content.</p>
+            </div>
+            <div class="col-sm-6 col-md-4 col-xl-3 mb-3">
+                <a href="examples/dashboard/">
+                    <img class="img-thumbnail mb-3" src="examples/screenshots/dashboard.png" alt="Dashboard screenshot" width="960" height="600" />
+                    <h5 class="mb-1">Dashboard</h5>
+                </a>
+                <p class="text-muted">Basic admin dashboard shell with fixed sidebar and navbar.</p>
+            </div>
+            <div class="col-sm-6 col-md-4 col-xl-3 mb-3">
+                <a href="examples/sign-in/">
+                    <img class="img-thumbnail mb-3" src="examples/screenshots/sign-in.png" alt="Sign-in screenshot" width="960" height="600" />
+                    <h5 class="mb-1">Sign-in</h5>
+                </a>
+                <p class="text-muted">Custom form layout and design for a simple sign in form.</p>
+            </div>
+            <div class="col-sm-6 col-md-4 col-xl-3 mb-3">
+                <a href="examples/sticky-footer/">
+                    <img class="img-thumbnail mb-3" src="examples/screenshots/sticky-footer.png" alt="Sticky footer screenshot" width="960" height="600" />
+                    <h5 class="mb-1">Sticky footer</h5>
+                </a>
+                <p class="text-muted">Attach a footer to the bottom of the viewport when page content is short.</p>
+            </div>
+            <div class="col-sm-6 col-md-4 col-xl-3 mb-3">
+                <a href="examples/sticky-footer-navbar/">
+                    <img class="img-thumbnail mb-3" src="examples/screenshots/sticky-footer-navbar.png" alt="Sticky footer navbar screenshot" width="960" height="600" />
+                    <h5 class="mb-1">Sticky footer navbar</h5>
+                </a>
+                <p class="text-muted">Attach a footer to the bottom of the viewport with a fixed top navbar.</p>
+            </div>
+        </div>
 
+        <h2>Framework</h2>
+        <p>Examples that focus on implementing uses of built-in components provided by Bootstrap.</p>
 
+        <div class="row">
+            <div class="col-sm-6 col-md-4 col-xl-3 mb-3">
+                <a href="examples/starter-template/">
+                    <img class="img-thumbnail mb-3" src="examples/screenshots/starter-template.png" alt="Starter template screenshot" width="960" height="600" />
+                    <h5 class="mb-1">Starter template</h5>
+                </a>
+                <p class="text-muted">Nothing but the basics: compiled CSS and JavaScript.</p>
+            </div>
+            <div class="col-sm-6 col-md-4 col-xl-3 mb-3">
+                <a href="examples/grid/">
+                    <img class="img-thumbnail mb-3" src="examples/screenshots/grid.png" alt="Grid screenshot" width="960" height="600" />
+                    <h5 class="mb-1">Grid</h5>
+                </a>
+                <p class="text-muted">Multiple examples of grid layouts with all four tiers, nesting, and more.</p>
+            </div>
+            <div class="col-sm-6 col-md-4 col-xl-3 mb-3">
+                <a href="examples/jumbotron/">
+                    <img class="img-thumbnail mb-3" src="examples/screenshots/jumbotron.png" alt="Jumbotron screenshot" width="960" height="600" />
+                    <h5 class="mb-1">Jumbotron</h5>
+                </a>
+                <p class="text-muted">Build around the jumbotron with a navbar and some basic grid columns.</p>
+            </div>
+        </div>
 
-        </main>
+        <h2>Navbars</h2>
+        <p>Taking the default navbar component and showing how it can be moved, placed, and extended.</p>
 
+        <div class="row">
+            <div class="col-sm-6 col-md-4 col-xl-3 mb-3">
+                <a href="examples/navbars/">
+                    <img class="img-thumbnail mb-3" src="examples/screenshots/navbars.png" alt="Navbars screenshot" width="960" height="600" />
+                    <h5 class="mb-1">Navbars</h5>
+                </a>
+                <p class="text-muted">Demonstration of all responsive and container options for the navbar.</p>
+            </div>
+            <div class="col-sm-6 col-md-4 col-xl-3 mb-3">
+                <a href="examples/navbar-static/">
+                    <img class="img-thumbnail mb-3" src="examples/screenshots/navbar-static.png" alt="Navbar static screenshot" width="960" height="600" />
+                    <h5 class="mb-1">Navbar static</h5>
+                </a>
+                <p class="text-muted">Single navbar example of a static top navbar along with some additional content.</p>
+            </div>
+            <div class="col-sm-6 col-md-4 col-xl-3 mb-3">
+                <a href="examples/navbar-fixed/">
+                    <img class="img-thumbnail mb-3" src="examples/screenshots/navbar-fixed.png" alt="Navbar fixed screenshot" width="960" height="600" />
+                    <h5 class="mb-1">Navbar fixed</h5>
+                </a>
+                <p class="text-muted">Single navbar example with a fixed top navbar along with some additional content.</p>
+            </div>
+            <div class="col-sm-6 col-md-4 col-xl-3 mb-3">
+                <a href="examples/navbar-bottom/">
+                    <img class="img-thumbnail mb-3" src="examples/screenshots/navbar-bottom.png" alt="Navbar bottom screenshot" width="960" height="600" />
+                    <h5 class="mb-1">Navbar bottom</h5>
+                </a>
+                <p class="text-muted">Single navbar example with a bottom navbar along with some additional content.</p>
+            </div>
+        </div>
+
+        <h2>Experiments</h2>
+        <p>Examples that focus on future-friendly features or techniques.</p>
+
+        <div class="row">
+            <div class="col-sm-6 col-md-4 col-xl-3 mb-3">
+                <a href="examples/floating-labels/">
+                    <img class="img-thumbnail mb-3" src="examples/screenshots/floating-labels.png" alt="Floating labels screenshot" width="960" height="600" />
+                    <h5 class="mb-1">Floating labels</h5>
+                </a>
+                <p class="text-muted">Beautifully simple forms with floating labels over your inputs.</p>
+            </div>
+            <div class="col-sm-6 col-md-4 col-xl-3 mb-3">
+                <a href="examples/offcanvas/">
+                    <img class="img-thumbnail mb-3" src="examples/screenshots/offcanvas.png" alt="Offcanvas screenshot" width="960" height="600" />
+                    <h5 class="mb-1">Offcanvas</h5>
+                </a>
+                <p class="text-muted">Turn your expandable navbar into a sliding offcanvas menu.</p>
+            </div>
+        </div>
     </main>
 
     <footer class="bd-footer text-muted">
@@ -366,7 +318,7 @@
                 <a href="https://github.com/PerseusTheGreat" target="_blank" rel="noopener">Arash Laylazi</a>.
             </p>
             <p>
-                Currently v4.1.0. Code licensed
+                Currently v4.1.2. Code licensed
                 <a href="https://github.com/twbs/bootstrap/blob/master/LICENSE" target="_blank" rel="license noopener">MIT</a>,
                 docs
                 <a href="https://creativecommons.org/licenses/by/3.0/" target="_blank" rel="license noopener">CC BY 3.0</a>.
