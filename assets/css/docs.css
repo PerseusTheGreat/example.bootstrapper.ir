@@ -14,8 +14,8 @@
 
 @media (max-width: 991.98px) {
     .bd-navbar {
-        padding-left: .5rem;
         padding-right: .5rem;
+        padding-left: .5rem;
     }
     .bd-navbar .navbar-nav-scroll {
         max-width: 100%;
@@ -44,8 +44,8 @@
 }
 
 .bd-navbar .navbar-nav .nav-link {
-    padding-left: .5rem;
     padding-right: .5rem;
+    padding-left: .5rem;
     color: #cbbde2;
 }
 
@@ -138,12 +138,12 @@
     position: static;
     display: block;
     max-width: 400px;
-    padding: 15px 160px 15px 15px;
+    padding: 15px 15px 15px 160px;
     margin: 2rem 0;
     overflow: hidden;
     font-size: 13px;
     line-height: 1.4;
-    text-align: right;
+    text-align: left;
     background-color: rgba(0, 0, 0, .05);
 }
 
@@ -160,8 +160,8 @@
 }
 
 .carbon-img {
-    float: right;
-    margin-right: -145px;
+    float: left;
+    margin-left: -145px;
 }
 
 .carbon-poweredby {
@@ -326,12 +326,12 @@
 }
 
 .section-nav {
-    padding-right: 0;
-    border-right: 1px solid #eee;
+    padding-left: 0;
+    border-left: 1px solid #eee;
 }
 
 .section-nav ul {
-    padding-right: 1rem;
+    padding-left: 1rem;
 }
 
 .section-nav ul ul {
@@ -361,7 +361,7 @@
 
 @media (min-width: 768px) {
     .bd-sidebar {
-        border-left: 1px solid rgba(0, 0, 0, .1);
+        border-right: 1px solid rgba(0, 0, 0, .1);
     }
     @supports ((position: -webkit-sticky) or (position: sticky)) {
         .bd-sidebar {
@@ -384,8 +384,8 @@
 .bd-links {
     padding-top: 1rem;
     padding-bottom: 1rem;
-    margin-left: -15px;
     margin-right: -15px;
+    margin-left: -15px;
 }
 
 @media (min-width: 768px) {
@@ -406,8 +406,8 @@
 .bd-search {
     position: relative;
     padding: 1rem 15px;
-    margin-left: -15px;
     margin-right: -15px;
+    margin-left: -15px;
     border-bottom: 1px solid rgba(0, 0, 0, .05);
 }
 
@@ -499,12 +499,12 @@
 
 @media (min-width: 576px) {
     .bd-footer {
-        text-align: right;
+        text-align: left;
     }
 }
 
 .bd-footer-links {
-    padding-right: 0;
+    padding-left: 0;
     margin-bottom: 1rem;
 }
 
@@ -513,7 +513,7 @@
 }
 
 .bd-footer-links li+li {
-    margin-right: 1rem;
+    margin-left: 1rem;
 }
 
 .bd-example-row .row>.col,
@@ -548,10 +548,10 @@
 .example-container {
     width: 800px;
     width: 100%;
-    padding-left: 15px;
     padding-right: 15px;
-    margin-left: auto;
+    padding-left: 15px;
     margin-right: auto;
+    margin-left: auto;
 }
 
 .example-row {
@@ -559,16 +559,16 @@
     display: flex;
     -ms-flex-wrap: wrap;
     flex-wrap: wrap;
-    margin-left: -15px;
     margin-right: -15px;
+    margin-left: -15px;
 }
 
 .example-content-main {
     position: relative;
     width: 100%;
     min-height: 1px;
-    padding-left: 15px;
     padding-right: 15px;
+    padding-left: 15px;
 }
 
 @media (min-width: 576px) {
@@ -591,8 +591,8 @@
     position: relative;
     width: 100%;
     min-height: 1px;
-    padding-left: 15px;
     padding-right: 15px;
+    padding-left: 15px;
 }
 
 @media (min-width: 576px) {
@@ -614,8 +614,8 @@
 .bd-example-container {
     min-width: 16rem;
     max-width: 25rem;
-    margin-left: auto;
     margin-right: auto;
+    margin-left: auto;
 }
 
 .bd-example-container-header {
@@ -626,7 +626,7 @@
 }
 
 .bd-example-container-sidebar {
-    float: left;
+    float: right;
     width: 4rem;
     height: 8rem;
     background-color: #80bdff;
@@ -635,7 +635,7 @@
 
 .bd-example-container-body {
     height: 8rem;
-    margin-left: 4.5rem;
+    margin-right: 4.5rem;
     background-color: #957bbe;
     border-radius: .25rem;
 }
@@ -661,8 +661,8 @@
 @media (min-width: 576px) {
     .bd-example {
         padding: 1.5rem;
-        margin-left: 0;
         margin-right: 0;
+        margin-left: 0;
         border-width: .2rem;
     }
 }
@@ -745,7 +745,7 @@
 }
 
 .bd-example>img+img {
-    margin-right: .5rem;
+    margin-left: .5rem;
 }
 
 .bd-example>.btn-group {
@@ -820,17 +820,17 @@
 .bd-example-modal .modal {
     position: relative;
     top: auto;
-    left: auto;
-    bottom: auto;
     right: auto;
+    bottom: auto;
+    left: auto;
     z-index: 1;
     display: block;
 }
 
 .bd-example-modal .modal-dialog {
-    right: auto;
-    margin-left: auto;
+    left: auto;
     margin-right: auto;
+    margin-left: auto;
 }
 
 .bd-example-tabs .nav-tabs {
@@ -845,7 +845,7 @@
 .bd-example-popover-static .popover {
     position: relative;
     display: block;
-    float: right;
+    float: left;
     width: 260px;
     margin: 1.25rem;
 }
@@ -901,14 +901,14 @@
 }
 
 .bd-content .highlight {
-    margin-left: -15px;
     margin-right: -15px;
+    margin-left: -15px;
 }
 
 @media (min-width: 576px) {
     .bd-content .highlight {
-        margin-left: 0;
         margin-right: 0;
+        margin-left: 0;
     }
 }
 
@@ -964,7 +964,7 @@
     margin-top: 1.25rem;
     margin-bottom: 1.25rem;
     border: 1px solid #eee;
-    border-right-width: .25rem;
+    border-left-width: .25rem;
     border-radius: .25rem;
 }
 
@@ -986,7 +986,7 @@
 }
 
 .bd-callout-info {
-    border-right-color: #5bc0de;
+    border-left-color: #5bc0de;
 }
 
 .bd-callout-info h4 {
@@ -994,7 +994,7 @@
 }
 
 .bd-callout-warning {
-    border-right-color: #f0ad4e;
+    border-left-color: #f0ad4e;
 }
 
 .bd-callout-warning h4 {
@@ -1002,7 +1002,7 @@
 }
 
 .bd-callout-danger {
-    border-right-color: #d9534f;
+    border-left-color: #d9534f;
 }
 
 .bd-callout-danger h4 {
@@ -1023,12 +1023,12 @@
 
 @media (max-width: 480px) {
     .bd-examples {
-        margin-left: -.75rem;
         margin-right: -.75rem;
+        margin-left: -.75rem;
     }
     .bd-examples>[class^="col-"] {
-        padding-left: .75rem;
         padding-right: .75rem;
+        padding-left: .75rem;
     }
 }
 
@@ -1071,8 +1071,8 @@
 }
 
 .bd-brand-item .bd-booticon {
-    margin-left: auto;
     margin-right: auto;
+    margin-left: auto;
 }
 
 @media (min-width: 768px) {
@@ -1082,7 +1082,7 @@
     }
     .bd-brand-item+.bd-brand-item {
         border-top: 0;
-        border-right: 1px solid #fff;
+        border-left: 1px solid #fff;
     }
     .bd-brand-item h1 {
         font-size: 4rem;
@@ -1095,11 +1095,11 @@
 }
 
 .color-swatch {
-    float: right;
+    float: left;
     width: 4rem;
     height: 4rem;
-    margin-left: .25rem;
     margin-right: .25rem;
+    margin-left: .25rem;
     border-radius: .25rem;
 }
 
@@ -1279,7 +1279,7 @@
 .bd-clipboard {
     position: relative;
     display: none;
-    float: left;
+    float: right;
 }
 
 .bd-clipboard+.highlight {
@@ -1289,7 +1289,7 @@
 .btn-clipboard {
     position: absolute;
     top: .5rem;
-    left: .5rem;
+    right: .5rem;
     z-index: 10;
     display: block;
     padding: .25rem .5rem;
@@ -1648,7 +1648,7 @@
     float: none !important;
     width: auto !important;
     padding: 0 !important;
-    text-align: right !important;
+    text-align: left !important;
 }
 
 .algolia-autocomplete .algolia-docsearch-suggestion--content {
@@ -1703,7 +1703,7 @@
     overflow: visible !important;
     color: inherit !important;
     text-indent: 0 !important;
-    background: 100% 0 !important;
+    background: 0 0 !important;
 }
 
 .algolia-autocomplete .algolia-docsearch-suggestion--highlight {
