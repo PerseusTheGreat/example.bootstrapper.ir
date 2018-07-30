@@ -40,6 +40,14 @@
             top: 0;
             z-index: 1071;
         }
+        /* External BUG: Microsift Edge does not show sticky element on rtl direction*/
+        /* https://developer.microsoft.com/en-us/microsoft-edge/platform/issues/15754013/ */
+        /* So, in Edge ,I use relative position */
+        @supports (-ms-ime-align: auto) {
+            .bd-navbar {
+                position: relative;
+            }
+        }
     }
 }
 
@@ -323,6 +331,14 @@
         height: calc(100vh - 4rem);
         overflow-y: auto;
     }
+    /* External BUG: Microsift Edge does not show sticky element on rtl direction*/
+    /* https://developer.microsoft.com/en-us/microsoft-edge/platform/issues/15754013/ */
+    /* So, in Edge ,I use relative position */
+    @supports (-ms-ime-align: auto) {
+        .bd-toc {
+            position: relative;
+        }
+    }
 }
 
 .section-nav {
@@ -370,6 +386,14 @@
             top: 4rem;
             z-index: 1000;
             height: calc(100vh - 4rem);
+        }
+        /* External BUG: Microsift Edge does not show sticky element on rtl direction*/
+        /* https://developer.microsoft.com/en-us/microsoft-edge/platform/issues/15754013/ */
+        /* So, in Edge ,I use relative position */
+        @supports (-ms-ime-align: auto) {
+            .bd-sidebar {
+                position: relative;
+            }
         }
     }
 }
