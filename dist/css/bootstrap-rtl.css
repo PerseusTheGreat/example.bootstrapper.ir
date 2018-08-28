@@ -5,7 +5,7 @@
  * Copyright 2011-2018 Twitter, Inc.
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
  * RTL-ized by Arash Laylazi (https://github.com/PerseusTheGreat)
- * RTL rev. 5 (https://github.com/PerseusTheGreat/bootstrap-rtl)
+ * RTL rev. 6 (https://github.com/PerseusTheGreat/bootstrap-rtl)
  */
 :root {
   --blue: #007bff;
@@ -490,7 +490,7 @@ mark,
 }
 
 .blockquote-footer::before {
-  content: "\2014 \00A0";
+  content: "\2014\00A0";
 }
 
 .img-fluid {
@@ -5555,6 +5555,8 @@ button.close {
   justify-content: flex-end;
   padding: 1rem;
   border-top: 1px solid #e9ecef;
+  border-bottom-right-radius: 0.3rem;
+  border-bottom-left-radius: 0.3rem;
 }
 
 .modal-footer > :not(:first-child) {
@@ -6076,7 +6078,7 @@ button.close {
 .carousel-indicators {
   position: absolute;
   right: 0;
-  bottom: 10px;
+  bottom: 0;
   left: 0;
   z-index: 15;
   display: -ms-flexbox;
@@ -6090,7 +6092,7 @@ button.close {
 }
 
 .carousel-indicators li {
-  position: relative;
+  box-sizing: content-box;
   -ms-flex: 0 1 auto;
   flex: 0 1 auto;
   width: 30px;
@@ -6100,6 +6102,9 @@ button.close {
   text-indent: -999px;
   cursor: pointer;
   background-color: #fff;
+  background-clip: padding-box;
+  border-top: 10px solid transparent;
+  border-bottom: 10px solid transparent;
   opacity: .5;
   transition: opacity 0.6s ease;
 }
@@ -6108,26 +6113,6 @@ button.close {
   .carousel-indicators li {
     transition: none;
   }
-}
-
-.carousel-indicators li::before {
-  position: absolute;
-  top: -10px;
-  right: 0;
-  display: inline-block;
-  width: 100%;
-  height: 10px;
-  content: "";
-}
-
-.carousel-indicators li::after {
-  position: absolute;
-  right: 0;
-  bottom: -10px;
-  display: inline-block;
-  width: 100%;
-  height: 10px;
-  content: "";
 }
 
 .carousel-indicators .active {
@@ -9549,6 +9534,10 @@ a.text-dark:hover, a.text-dark:focus {
 
 .text-decoration-none {
   text-decoration: none !important;
+}
+
+.text-reset {
+  color: inherit !important;
 }
 
 .visible {
