@@ -142,14 +142,11 @@
         var selector = element.getAttribute('data-target');
 
         if (!selector || selector === '#') {
-          selector = (element.getAttribute('href') || '').trim();
+          var hrefAttr = element.getAttribute('href');
+          selector = hrefAttr && hrefAttr !== '#' ? hrefAttr.trim() : '';
         }
 
-        try {
-          return document.querySelector(selector) ? selector : null;
-        } catch (err) {
-          return null;
-        }
+        return selector && document.querySelector(selector) ? selector : null;
       },
       getTransitionDurationFromElement: function getTransitionDurationFromElement(element) {
         if (!element) {

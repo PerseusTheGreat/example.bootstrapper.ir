@@ -5,7 +5,7 @@
  * Copyright 2011-2018 Twitter, Inc.
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
  * RTL-ized by Arash Laylazi (https://github.com/PerseusTheGreat)
- * RTL rev. 8 (https://github.com/PerseusTheGreat/bootstrap-rtl)
+ * RTL rev. 9 (https://github.com/PerseusTheGreat/bootstrap-rtl)
  */
 :root {
   --blue: #007bff;
@@ -4834,7 +4834,7 @@ input[type="button"].btn-block {
   border-radius: 0.25rem;
 }
 
-.badge[href]:hover, .badge[href]:focus {
+a.badge:hover, a.badge:focus {
   text-decoration: none;
 }
 
@@ -4858,7 +4858,7 @@ input[type="button"].btn-block {
   background-color: #007bff;
 }
 
-.badge-primary[href]:hover, .badge-primary[href]:focus {
+a.badge-primary:hover, a.badge-primary:focus {
   color: #fff;
   background-color: #0062cc;
 }
@@ -4868,7 +4868,7 @@ input[type="button"].btn-block {
   background-color: #6c757d;
 }
 
-.badge-secondary[href]:hover, .badge-secondary[href]:focus {
+a.badge-secondary:hover, a.badge-secondary:focus {
   color: #fff;
   background-color: #545b62;
 }
@@ -4878,7 +4878,7 @@ input[type="button"].btn-block {
   background-color: #28a745;
 }
 
-.badge-success[href]:hover, .badge-success[href]:focus {
+a.badge-success:hover, a.badge-success:focus {
   color: #fff;
   background-color: #1e7e34;
 }
@@ -4888,7 +4888,7 @@ input[type="button"].btn-block {
   background-color: #17a2b8;
 }
 
-.badge-info[href]:hover, .badge-info[href]:focus {
+a.badge-info:hover, a.badge-info:focus {
   color: #fff;
   background-color: #117a8b;
 }
@@ -4898,7 +4898,7 @@ input[type="button"].btn-block {
   background-color: #ffc107;
 }
 
-.badge-warning[href]:hover, .badge-warning[href]:focus {
+a.badge-warning:hover, a.badge-warning:focus {
   color: #212529;
   background-color: #d39e00;
 }
@@ -4908,7 +4908,7 @@ input[type="button"].btn-block {
   background-color: #dc3545;
 }
 
-.badge-danger[href]:hover, .badge-danger[href]:focus {
+a.badge-danger:hover, a.badge-danger:focus {
   color: #fff;
   background-color: #bd2130;
 }
@@ -4918,7 +4918,7 @@ input[type="button"].btn-block {
   background-color: #f8f9fa;
 }
 
-.badge-light[href]:hover, .badge-light[href]:focus {
+a.badge-light:hover, a.badge-light:focus {
   color: #212529;
   background-color: #dae0e5;
 }
@@ -4928,7 +4928,7 @@ input[type="button"].btn-block {
   background-color: #343a40;
 }
 
-.badge-dark[href]:hover, .badge-dark[href]:focus {
+a.badge-dark:hover, a.badge-dark:focus {
   color: #fff;
   background-color: #1d2124;
 }
