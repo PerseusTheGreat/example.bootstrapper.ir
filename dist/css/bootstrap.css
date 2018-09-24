@@ -2893,19 +2893,15 @@ fieldset:disabled a.btn {
 .btn-link {
   font-weight: 400;
   color: #007bff;
-  background-color: transparent;
 }
 
 .btn-link:hover {
   color: #0056b3;
   text-decoration: underline;
-  background-color: transparent;
-  border-color: transparent;
 }
 
 .btn-link:focus, .btn-link.focus {
   text-decoration: underline;
-  border-color: transparent;
   box-shadow: none;
 }
 
@@ -3401,6 +3397,11 @@ input[type="button"].btn-block {
 .input-group-append .btn {
   position: relative;
   z-index: 2;
+}
+
+.input-group-prepend .btn:focus,
+.input-group-append .btn:focus {
+  z-index: 3;
 }
 
 .input-group-prepend .btn + .btn,
@@ -5468,14 +5469,14 @@ button.close {
   align-items: flex-start;
   -ms-flex-pack: justify;
   justify-content: space-between;
-  padding: 1rem;
+  padding: 1rem 1rem;
   border-bottom: 1px solid #e9ecef;
   border-top-left-radius: 0.3rem;
   border-top-right-radius: 0.3rem;
 }
 
 .modal-header .close {
-  padding: 1rem;
+  padding: 1rem 1rem;
   margin: -1rem -1rem -1rem auto;
 }
 

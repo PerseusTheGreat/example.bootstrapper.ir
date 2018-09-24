@@ -5,7 +5,7 @@
  * Copyright 2011-2018 Twitter, Inc.
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
  * RTL-ized by Arash Laylazi (https://github.com/PerseusTheGreat)
- * RTL rev. 9 (https://github.com/PerseusTheGreat/bootstrap-rtl)
+ * RTL rev. 10 (https://github.com/PerseusTheGreat/bootstrap-rtl)
  */
 :root {
   --blue: #007bff;
@@ -364,8 +364,10 @@ template {
 
 code,
 samp,
+var,
 [type="email"],
 [type="file"],
+[type="number"],
 [type="password"],
 [type="tel"],
 [type="url"] {
@@ -1987,13 +1989,13 @@ textarea.form-control {
 .form-check {
   position: relative;
   display: block;
-  padding-left: 1.25rem;
+  padding-right: 1.25rem;
 }
 
 .form-check-input {
   position: absolute;
   margin-top: 0.3rem;
-  margin-left: -1.25rem;
+  margin-right: -1.25rem;
 }
 
 .form-check-input:disabled ~ .form-check-label {
@@ -2009,15 +2011,15 @@ textarea.form-control {
   display: inline-flex;
   -ms-flex-align: center;
   align-items: center;
-  padding-left: 0;
-  margin-right: 0.75rem;
+  padding-right: 0;
+  margin-left: 0.75rem;
 }
 
 .form-check-inline .form-check-input {
   position: static;
   margin-top: 0;
-  margin-right: 0.3125rem;
-  margin-left: 0;
+  margin-right: 0;
+  margin-left: 0.3125rem;
 }
 
 .valid-feedback {
@@ -2310,13 +2312,13 @@ textarea.form-control {
     -ms-flex-pack: center;
     justify-content: center;
     width: auto;
-    padding-left: 0;
+    padding-right: 0;
   }
   .form-inline .form-check-input {
     position: relative;
     margin-top: 0;
-    margin-right: 0.25rem;
-    margin-left: 0;
+    margin-right: 0;
+    margin-left: 0.25rem;
   }
   .form-inline .custom-control {
     -ms-flex-align: center;
@@ -2908,19 +2910,15 @@ fieldset:disabled a.btn {
 .btn-link {
   font-weight: 400;
   color: #007bff;
-  background-color: transparent;
 }
 
 .btn-link:hover {
   color: #0056b3;
   text-decoration: underline;
-  background-color: transparent;
-  border-color: transparent;
 }
 
 .btn-link:focus, .btn-link.focus {
   text-decoration: underline;
-  border-color: transparent;
   box-shadow: none;
 }
 
@@ -3416,6 +3414,11 @@ input[type="button"].btn-block {
 .input-group-append .btn {
   position: relative;
   z-index: 2;
+}
+
+.input-group-prepend .btn:focus,
+.input-group-append .btn:focus {
+  z-index: 3;
 }
 
 .input-group-prepend .btn + .btn,
@@ -5495,14 +5498,14 @@ button.close {
   align-items: flex-start;
   -ms-flex-pack: justify;
   justify-content: space-between;
-  padding: 1rem;
+  padding: 1rem 1rem;
   border-bottom: 1px solid #e9ecef;
   border-top-left-radius: 0.3rem;
   border-top-right-radius: 0.3rem;
 }
 
 .modal-header .close {
-  padding: 1rem;
+  padding: 1rem 1rem;
   margin: -1rem auto -1rem -1rem;
 }
 
