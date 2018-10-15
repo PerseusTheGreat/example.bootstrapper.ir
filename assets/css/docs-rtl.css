@@ -299,15 +299,20 @@
     color: #7952b3;
 }
 
-#skippy {
+.skippy {
     display: block;
     padding: 1em;
     color: #fff;
+    text-align: center;
     background-color: #563d7c;
     outline: 0;
 }
 
-#skippy .skiplink-text {
+.skippy:hover {
+    color: #fff;
+}
+
+.skippy-text {
     padding: .5em;
     outline: 1px dotted;
 }
