@@ -797,14 +797,12 @@
       };
 
       var move = function move(event) {
-        if (!_this3._pointerEvent) {
-          event.preventDefault(); // ensure swiping with one touch and not pinching
+        event.preventDefault(); // ensure swiping with one touch and not pinching
 
-          if (event.originalEvent.touches && event.originalEvent.touches.length > 1) {
-            _this3.touchDeltaX = 0;
-          } else {
-            _this3.touchDeltaX = event.originalEvent.touches[0].clientX - _this3.touchStartX;
-          }
+        if (event.originalEvent.touches && event.originalEvent.touches.length > 1) {
+          _this3.touchDeltaX = 0;
+        } else {
+          _this3.touchDeltaX = event.originalEvent.touches[0].clientX - _this3.touchStartX;
         }
       };
 
@@ -6430,7 +6428,7 @@
 
       var activeElements;
 
-      if (container.nodeName === 'UL') {
+      if (container && container.nodeName === 'UL') {
         activeElements = $(container).find(Selector$9.ACTIVE_UL);
       } else {
         activeElements = $(container).children(Selector$9.ACTIVE);
