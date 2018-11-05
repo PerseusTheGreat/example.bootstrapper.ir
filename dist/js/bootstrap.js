@@ -4,13 +4,13 @@
   * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
   */
 (function (global, factory) {
-  typeof exports === 'object' && typeof module !== 'undefined' ? factory(exports, require('jquery'), require('popper.js')) :
-  typeof define === 'function' && define.amd ? define(['exports', 'jquery', 'popper.js'], factory) :
-  (factory((global.bootstrap = {}),global.jQuery,global.Popper));
-}(this, (function (exports,$,Popper) { 'use strict';
+  typeof exports === 'object' && typeof module !== 'undefined' ? factory(exports, require('popper.js'), require('jquery')) :
+  typeof define === 'function' && define.amd ? define(['exports', 'popper.js', 'jquery'], factory) :
+  (factory((global.bootstrap = {}),global.Popper,global.jQuery));
+}(this, (function (exports,Popper,$) { 'use strict';
 
-  $ = $ && $.hasOwnProperty('default') ? $['default'] : $;
   Popper = Popper && Popper.hasOwnProperty('default') ? Popper['default'] : Popper;
+  $ = $ && $.hasOwnProperty('default') ? $['default'] : $;
 
   function _defineProperties(target, props) {
     for (var i = 0; i < props.length; i++) {
@@ -156,15 +156,18 @@
 
 
       var transitionDuration = $(element).css('transition-duration');
-      var floatTransitionDuration = parseFloat(transitionDuration); // Return 0 if element or transition duration is not found
+      var transitionDelay = $(element).css('transition-delay');
+      var floatTransitionDuration = parseFloat(transitionDuration);
+      var floatTransitionDelay = parseFloat(transitionDelay); // Return 0 if element or transition duration is not found
 
-      if (!floatTransitionDuration) {
+      if (!floatTransitionDuration && !floatTransitionDelay) {
         return 0;
       } // If multiple durations are defined, take the first
 
 
       transitionDuration = transitionDuration.split(',')[0];
-      return parseFloat(transitionDuration) * MILLISECONDS_MULTIPLIER;
+      transitionDelay = transitionDelay.split(',')[0];
+      return (parseFloat(transitionDuration) + parseFloat(transitionDelay)) * MILLISECONDS_MULTIPLIER;
     },
     reflow: function reflow(element) {
       return element.offsetHeight;
@@ -792,14 +795,12 @@
         if (_this3._pointerEvent && (event.originalEvent.pointerType === PointerType.TOUCH || event.originalEvent.pointerType === PointerType.PEN)) {
           _this3.touchStartX = event.originalEvent.clientX;
         } else if (!_this3._pointerEvent) {
-          event.preventDefault();
           _this3.touchStartX = event.originalEvent.touches[0].clientX;
         }
       };
 
       var move = function move(event) {
-        event.preventDefault(); // ensure swiping with one touch and not pinching
-
+        // ensure swiping with one touch and not pinching
         if (event.originalEvent.touches && event.originalEvent.touches.length > 1) {
           _this3.touchDeltaX = 0;
         } else {
@@ -2105,6 +2106,7 @@
       this._isShown = false;
       this._isBodyOverflowing = false;
       this._ignoreBackdropClick = false;
+      this._isTransitioning = false;
       this._scrollbarWidth = 0;
     } // Getters
 
@@ -2119,7 +2121,7 @@
     _proto.show = function show(relatedTarget) {
       var _this = this;
 
-      if (this._isTransitioning || this._isShown) {
+      if (this._isShown || this._isTransitioning) {
         return;
       }
 
@@ -2173,7 +2175,7 @@
         event.preventDefault();
       }
 
-      if (this._isTransitioning || !this._isShown) {
+      if (!this._isShown || this._isTransitioning) {
         return;
       }
 
@@ -2211,8 +2213,17 @@
     };
 
     _proto.dispose = function dispose() {
+      [window, this._element, this._dialog].forEach(function (htmlElement) {
+        return $(htmlElement).off(EVENT_KEY$5);
+      });
+      /**
+       * `document` has 2 events `Event.FOCUSIN` and `Event.CLICK_DATA_API`
+       * Do not move `document` in `htmlElements` array
+       * It will remove `Event.CLICK_DATA_API` event that should remain
+       */
+
+      $(document).off(Event$5.FOCUSIN);
       $.removeData(this._element, DATA_KEY$5);
-      $(window, document, this._element, this._backdrop).off(EVENT_KEY$5);
       this._config = null;
       this._element = null;
       this._dialog = null;
@@ -2220,6 +2231,7 @@
       this._isShown = null;
       this._isBodyOverflowing = null;
       this._ignoreBackdropClick = null;
+      this._isTransitioning = null;
       this._scrollbarWidth = null;
     };
 
@@ -3013,10 +3025,11 @@
             return _this3._leave(event);
           });
         }
-
-        $(_this3.element).closest('.modal').on('hide.bs.modal', function () {
-          return _this3.hide();
-        });
+      });
+      $(this.element).closest('.modal').on('hide.bs.modal', function () {
+        if (_this3.element) {
+          _this3.hide();
+        }
       });
 
       if (this.config.selector) {
