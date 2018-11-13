@@ -1,8 +1,12 @@
 /* External BUG: Microsift Edge does not show sticky element on rtl direction*/
 /* https://developer.microsoft.com/en-us/microsoft-edge/platform/issues/15754013/ */
+/* https://developer.microsoft.com/en-us/microsoft-edge/platform/issues/15754013/ */
+/* https://developer.microsoft.com/en-us/microsoft-edge/platform/issues/18883305/ */
 /* So, in Edge ,I use relative position */
 @supports (-ms-ime-align:auto) {
     .site-header {
         position: relative;
+        /*-webkit-filter: brightness(1) !important;
+        filter: brightness(1) !important;*/
     }
 }

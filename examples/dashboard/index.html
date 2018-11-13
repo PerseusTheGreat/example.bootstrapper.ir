@@ -14,7 +14,7 @@
 
     <!-- Custom styles for this template -->
     <link href="dashboard.css" rel="stylesheet" />
-    <link href="dashboard.fix.css" rel="stylesheet" />
+    <!--<link href="dashboard.fix.css" rel="stylesheet" />-->
 </head>
 <body>
     <nav class="navbar navbar-dark fixed-top bg-dark flex-md-nowrap p-0 shadow">
@@ -125,7 +125,6 @@
                 <!-- External BUG: Microsift Edge does not show sticky element on rtl direction -->
                 <!-- https://developer.microsoft.com/en-us/microsoft-edge/platform/issues/15754013/ -->
                 <!-- In Edge 16-, because of above [nav.sidebar>div.sidebar-sticky], you should wrap [canvas#myChart] by a special DIV as below !-->
-
                 <!--<div style="position: relative; direction: ltr!important;" dir="ltr">-->
                 <canvas class="my-4 w-100" id="myChart" width="900" height="380"></canvas>
                 <!--</div>-->
@@ -271,39 +270,10 @@
     <script src="../../dist/js/bootstrap.bundle.min.js"></script>
 
     <!-- Icons -->
-    <script src="https://unpkg.com/feather-icons/dist/feather.min.js"></script>
-    <script>feather.replace();</script>
-
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/feather-icons/4.9.0/feather.min.js"></script>
+    
     <!-- Graphs -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.1/Chart.min.js"></script>
-    <script>
-        var ctx = document.getElementById("myChart");
-        var myChart = new Chart(ctx, {
-            type: 'line',
-            data: {
-                labels: ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
-                datasets: [{
-                    data: [15339, 21345, 18483, 24003, 23489, 24092, 12034],
-                    lineTension: 0,
-                    backgroundColor: 'transparent',
-                    borderColor: '#007bff',
-                    borderWidth: 4,
-                    pointBackgroundColor: '#007bff'
-                }]
-            },
-            options: {
-                scales: {
-                    yAxes: [{
-                        ticks: {
-                            beginAtZero: false
-                        }
-                    }]
-                },
-                legend: {
-                    display: false,
-                }
-            }
-        });
-    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.3/Chart.min.js"></script>
+    <script src="dashboard.js"></script>
 </body>
 </html>
