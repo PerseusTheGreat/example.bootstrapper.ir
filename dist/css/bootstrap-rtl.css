@@ -5,7 +5,7 @@
  * Copyright 2011-2018 Twitter, Inc.
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
  * RTL-ized by Arash Laylazi (https://github.com/PerseusTheGreat)
- * RTL rev. 17 (https://github.com/PerseusTheGreat/bootstrap-rtl)
+ * RTL rev. 18 (https://github.com/PerseusTheGreat/bootstrap-rtl)
  */
 :root {
   --blue: #007bff;
@@ -99,6 +99,7 @@ abbr[data-original-title] {
   text-decoration: underline dotted;
   cursor: help;
   border-bottom: 0;
+  text-decoration-skip-ink: none;
 }
 
 address {
@@ -3568,6 +3569,7 @@ input[type="button"].btn-block {
 }
 
 .input-group-lg > .form-control,
+.input-group-lg > .custom-select,
 .input-group-lg > .input-group-prepend > .input-group-text,
 .input-group-lg > .input-group-append > .input-group-text,
 .input-group-lg > .input-group-prepend > .btn,
@@ -3580,6 +3582,7 @@ input[type="button"].btn-block {
 }
 
 .input-group-sm > .form-control,
+.input-group-sm > .custom-select,
 .input-group-sm > .input-group-prepend > .input-group-text,
 .input-group-sm > .input-group-append > .input-group-text,
 .input-group-sm > .input-group-prepend > .btn,
@@ -3589,6 +3592,11 @@ input[type="button"].btn-block {
   font-size: 0.875rem;
   line-height: 1.5;
   border-radius: 0.2rem;
+}
+
+.input-group-lg > .custom-select,
+.input-group-sm > .custom-select {
+  padding-left: 1.75rem;
 }
 
 .input-group > .input-group-prepend > .btn,
@@ -4599,7 +4607,7 @@ input[type="button"].btn-block {
 .card-header {
   padding: 0.75rem 1.25rem;
   margin-bottom: 0;
-  color: #212529;
+  color: inherit;
   background-color: rgba(0, 0, 0, 0.03);
   border-bottom: 1px solid rgba(0, 0, 0, 0.125);
 }
@@ -4826,12 +4834,12 @@ input[type="button"].btn-block {
 }
 
 .breadcrumb-item + .breadcrumb-item {
-  padding-left: 0.5rem;
+  padding-right: 0.5rem;
 }
 
 .breadcrumb-item + .breadcrumb-item::before {
   display: inline-block;
-  padding-right: 0.5rem;
+  padding-left: 0.5rem;
   color: #6c757d;
   content: "/";
 }
@@ -6264,15 +6272,14 @@ a.close.disabled {
 }
 
 .spinner-border {
-  position: relative;
   display: inline-block;
   width: 2rem;
   height: 2rem;
   overflow: hidden;
   text-indent: -999em;
   vertical-align: text-bottom;
-  border: 0.25em solid;
-  border-color: currentColor transparent currentColor currentColor;
+  border: 0.25em solid currentColor;
+  border-left-color: transparent;
   border-radius: 50%;
   -webkit-animation: spinner-border .75s linear infinite;
   animation: spinner-border .75s linear infinite;
@@ -6286,38 +6293,25 @@ a.close.disabled {
 
 @-webkit-keyframes spinner-grow {
   0% {
-    opacity: 0;
     -webkit-transform: scale(0);
     transform: scale(0);
   }
   50% {
     opacity: 1;
-  }
-  100% {
-    opacity: 0;
-    -webkit-transform: scale(1);
-    transform: scale(1);
   }
 }
 
 @keyframes spinner-grow {
   0% {
-    opacity: 0;
     -webkit-transform: scale(0);
     transform: scale(0);
   }
   50% {
     opacity: 1;
   }
-  100% {
-    opacity: 0;
-    -webkit-transform: scale(1);
-    transform: scale(1);
-  }
 }
 
 .spinner-grow {
-  position: relative;
   display: inline-block;
   width: 2rem;
   height: 2rem;
@@ -6326,6 +6320,7 @@ a.close.disabled {
   vertical-align: text-bottom;
   background-color: currentColor;
   border-radius: 50%;
+  opacity: 0;
   -webkit-animation: spinner-grow .75s linear infinite;
   animation: spinner-grow .75s linear infinite;
 }
