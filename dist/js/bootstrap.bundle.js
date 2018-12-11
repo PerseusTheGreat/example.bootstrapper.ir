@@ -192,6 +192,28 @@
           }
         }
       }
+    },
+    findShadowRoot: function findShadowRoot(element) {
+      if (!document.documentElement.attachShadow) {
+        return null;
+      } // Can find the shadow root otherwise it'll return the document
+
+
+      if (typeof element.getRootNode === 'function') {
+        var root = element.getRootNode();
+        return root instanceof ShadowRoot ? root : null;
+      }
+
+      if (element instanceof ShadowRoot) {
+        return element;
+      } // when we don't find a shadow root
+
+
+      if (!element.parentNode) {
+        return null;
+      }
+
+      return Util.findShadowRoot(element.parentNode);
     }
   };
   setTransitionEndSupport();
@@ -381,7 +403,7 @@
   var Selector$1 = {
     DATA_TOGGLE_CARROT: '[data-toggle^="button"]',
     DATA_TOGGLE: '[data-toggle="buttons"]',
-    INPUT: 'input',
+    INPUT: 'input:not([type="hidden"])',
     ACTIVE: '.active',
     BUTTON: '.btn'
   };
@@ -4482,7 +4504,7 @@
 
       var isActive = $(parent).hasClass(ClassName$4.SHOW);
 
-      if (!isActive && (event.which !== ESCAPE_KEYCODE || event.which !== SPACE_KEYCODE) || isActive && (event.which === ESCAPE_KEYCODE || event.which === SPACE_KEYCODE)) {
+      if (!isActive || isActive && (event.which === ESCAPE_KEYCODE || event.which === SPACE_KEYCODE)) {
         if (event.which === ESCAPE_KEYCODE) {
           var toggle = parent.querySelector(Selector$4.DATA_TOGGLE);
           $(toggle).trigger('focus');
@@ -4788,6 +4810,8 @@
 
       this._element.removeAttribute('aria-hidden');
 
+      this._element.setAttribute('aria-modal', true);
+
       this._element.scrollTop = 0;
 
       if (transition) {
@@ -4866,6 +4890,8 @@
       this._element.style.display = 'none';
 
       this._element.setAttribute('aria-hidden', true);
+
+      this._element.removeAttribute('aria-modal');
 
       this._isTransitioning = false;
 
@@ -5333,7 +5359,8 @@
 
       if (this.isWithContent() && this._isEnabled) {
         $(this.element).trigger(showEvent);
-        var isInTheDom = $.contains(this.element.ownerDocument.documentElement, this.element);
+        var shadowRoot = Util.findShadowRoot(this.element);
+        var isInTheDom = $.contains(shadowRoot !== null ? shadowRoot : this.element.ownerDocument.documentElement, this.element);
 
         if (showEvent.isDefaultPrevented() || !isInTheDom) {
           return;
@@ -5354,7 +5381,9 @@
         var attachment = this._getAttachment(placement);
 
         this.addAttachmentClass(attachment);
-        var container = this.config.container === false ? document.body : $(document).find(this.config.container);
+
+        var container = this._getContainer();
+
         $(tip).data(this.constructor.DATA_KEY, this);
 
         if (!$.contains(this.element.ownerDocument.documentElement, this.tip)) {
@@ -5525,6 +5554,18 @@
       return title;
     }; // Private
 
+
+    _proto._getContainer = function _getContainer() {
+      if (this.config.container === false) {
+        return document.body;
+      }
+
+      if (Util.isElement(this.config.container)) {
+        return $(this.config.container);
+      }
+
+      return $(document).find(this.config.container);
+    };
 
     _proto._getAttachment = function _getAttachment(placement) {
       return AttachmentMap$1[placement.toUpperCase()];
@@ -6545,7 +6586,8 @@
   var ClassName$a = {
     FADE: 'fade',
     HIDE: 'hide',
-    SHOW: 'show'
+    SHOW: 'show',
+    SHOWING: 'showing'
   };
   var DefaultType$7 = {
     animation: 'boolean',
@@ -6592,6 +6634,10 @@
       }
 
       var complete = function complete() {
+        _this._element.classList.remove(ClassName$a.SHOWING);
+
+        _this._element.classList.add(ClassName$a.SHOW);
+
         $(_this._element).trigger(Event$a.SHOWN);
 
         if (_this._config.autohide) {
@@ -6599,7 +6645,9 @@
         }
       };
 
-      this._element.classList.add(ClassName$a.SHOW);
+      this._element.classList.remove(ClassName$a.HIDE);
+
+      this._element.classList.add(ClassName$a.SHOWING);
 
       if (this._config.animation) {
         var transitionDuration = Util.getTransitionDurationFromElement(this._element);
@@ -6660,6 +6708,8 @@
       var _this4 = this;
 
       var complete = function complete() {
+        _this4._element.classList.add(ClassName$a.HIDE);
+
         $(_this4._element).trigger(Event$a.HIDDEN);
       };
 
