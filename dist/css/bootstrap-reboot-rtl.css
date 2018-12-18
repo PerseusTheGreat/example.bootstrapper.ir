@@ -5,7 +5,7 @@
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
  * Forked from Normalize.css, licensed MIT (https://github.com/necolas/normalize.css/blob/master/LICENSE.md)
  * RTL-ized by Arash Laylazi (https://github.com/PerseusTheGreat)
- * RTL rev. 21 (https://github.com/PerseusTheGreat/bootstrap-rtl)
+ * RTL rev. 22 (https://github.com/PerseusTheGreat/bootstrap-rtl)
  */
 *,
 *::before,
@@ -17,13 +17,8 @@ html {
   font-family: sans-serif;
   line-height: 1.15;
   -webkit-text-size-adjust: 100%;
-  -ms-overflow-style: scrollbar;
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
   direction: rtl;
-}
-
-@-ms-viewport {
-  width: device-width;
 }
 
 article, aside, figcaption, figure, footer, header, hgroup, main, nav, section {
@@ -166,7 +161,6 @@ pre {
   margin-top: 0;
   margin-bottom: 1rem;
   overflow: auto;
-  -ms-overflow-style: scrollbar;
 }
 
 figure {

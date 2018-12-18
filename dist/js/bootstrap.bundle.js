@@ -6,8 +6,8 @@
 (function (global, factory) {
   typeof exports === 'object' && typeof module !== 'undefined' ? factory(exports, require('jquery')) :
   typeof define === 'function' && define.amd ? define(['exports', 'jquery'], factory) :
-  (factory((global.bootstrap = {}),global.jQuery));
-}(this, (function (exports,$) { 'use strict';
+  factory(global.bootstrap = {},global.jQuery);
+}(typeof self !== 'undefined' ? self : this, function (exports,$) { 'use strict';
 
   $ = $ && $.hasOwnProperty('default') ? $['default'] : $;
 
@@ -6814,5 +6814,5 @@
 
   Object.defineProperty(exports, '__esModule', { value: true });
 
-})));
+}));
 //# sourceMappingURL=bootstrap.bundle.js.map
