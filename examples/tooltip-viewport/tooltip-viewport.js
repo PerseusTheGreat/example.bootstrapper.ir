@@ -3,30 +3,22 @@ $(function () {
 
     $('.tooltip-left').tooltip({
         placement: 'left',
-        viewport: {
-            selector: 'body',
-            padding: 2
-        }
+        offset: 2,
+        container: 'body'
     })
     $('.tooltip-bottom').tooltip({
         placement: 'bottom',
-        viewport: {
-            selector: 'body',
-            padding: 2
-        }
+        offset: 2,
+        container: 'body'
     })
     $('.tooltip-viewport-left').tooltip({
         placement: 'left',
-        viewport: {
-            selector: '.container-viewport',
-            padding: 2
-        }
+        offset: 2,
+        container: '.container-viewport'
     })
     $('.tooltip-viewport-bottom').tooltip({
         placement: 'bottom',
-        viewport: {
-            selector: '.container-viewport',
-            padding: 2
-        }
+        offset: 2,
+        container: '.container-viewport'
     })
 })
