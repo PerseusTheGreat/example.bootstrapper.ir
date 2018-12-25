@@ -1,5 +1,6 @@
 body {
-    height: 1200px;
+    /*height: 1200px;*/
+    height: 100vh;
 }
 
 .tooltip {
