@@ -255,11 +255,22 @@ select {
   text-transform: none;
 }
 
+select {
+  word-wrap: normal;
+}
+
 button,
 [type="button"],
 [type="reset"],
 [type="submit"] {
   -webkit-appearance: button;
+}
+
+button:not(:disabled),
+[type="button"]:not(:disabled),
+[type="reset"]:not(:disabled),
+[type="submit"]:not(:disabled) {
+  cursor: pointer;
 }
 
 button::-moz-focus-inner,
@@ -2414,10 +2425,6 @@ textarea.form-control {
   opacity: 0.65;
 }
 
-.btn:not(:disabled):not(.disabled) {
-  cursor: pointer;
-}
-
 a.btn.disabled,
 fieldset:disabled a.btn {
   pointer-events: none;
@@ -4254,10 +4261,6 @@ input[type="button"].btn-block {
   text-decoration: none;
 }
 
-.navbar-toggler:not(:disabled):not(.disabled) {
-  cursor: pointer;
-}
-
 .navbar-toggler-icon {
   display: inline-block;
   width: 1.5em;
@@ -4893,10 +4896,6 @@ input[type="button"].btn-block {
   z-index: 2;
   outline: 0;
   box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
-}
-
-.page-link:not(:disabled):not(.disabled) {
-  cursor: pointer;
 }
 
 .page-item:first-child .page-link {
@@ -5568,10 +5567,6 @@ a.badge-dark:focus, a.badge-dark.focus {
 .close:hover {
   color: #000;
   text-decoration: none;
-}
-
-.close:not(:disabled):not(.disabled) {
-  cursor: pointer;
 }
 
 .close:not(:disabled):not(.disabled):hover, .close:not(:disabled):not(.disabled):focus {
