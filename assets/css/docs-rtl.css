@@ -1,7 +1,7 @@
 /*!
  * Bootstrap Docs (https://getbootstrap.com/)
- * Copyright 2011-2018 The Bootstrap Authors
- * Copyright 2011-2018 Twitter, Inc.
+ * Copyright 2011-2019 The Bootstrap Authors
+ * Copyright 2011-2019 Twitter, Inc.
  * Licensed under the Creative Commons Attribution 3.0 Unported License. For
  * details, see https://creativecommons.org/licenses/by/3.0/.
  */
@@ -747,6 +747,7 @@
     margin-right: .5rem;
 }
 
+.bd-example>.btn,
 .bd-example>.btn-group {
     margin-top: .25rem;
     margin-bottom: .25rem;
@@ -1571,7 +1572,7 @@
     transition: color .15s ease-in-out, opacity .15s ease-in-out;
 }
 
-@media screen and (prefers-reduced-motion: reduce) {
+@media (prefers-reduced-motion: reduce) {
     .anchorjs-link {
         transition: none;
     }
