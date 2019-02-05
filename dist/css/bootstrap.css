@@ -3243,16 +3243,6 @@ input[type="button"].btn-block {
   border: 0;
 }
 
-.dropdown-item:first-child {
-  border-top-left-radius: calc(0.25rem - 1px);
-  border-top-right-radius: calc(0.25rem - 1px);
-}
-
-.dropdown-item:last-child {
-  border-bottom-right-radius: calc(0.25rem - 1px);
-  border-bottom-left-radius: calc(0.25rem - 1px);
-}
-
 .dropdown-item:hover, .dropdown-item:focus {
   color: #16181b;
   text-decoration: none;
