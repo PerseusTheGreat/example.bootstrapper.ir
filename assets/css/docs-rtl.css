@@ -2,8 +2,8 @@
  * Bootstrap Docs (https://getbootstrap.com/)
  * Copyright 2011-2019 The Bootstrap Authors
  * Copyright 2011-2019 Twitter, Inc.
- * Licensed under the Creative Commons Attribution 3.0 Unported License. For
- * details, see https://creativecommons.org/licenses/by/3.0/.
+ * Licensed under the Creative Commons Attribution 3.0 Unported License.
+ * For details, see https://creativecommons.org/licenses/by/3.0/.
  */
 .bd-navbar {
     min-height: 4rem;
@@ -22,7 +22,6 @@
         height: 2.5rem;
         margin-top: .25rem;
         overflow: hidden;
-        font-size: .875rem;
     }
 
     .bd-navbar .navbar-nav-scroll .navbar-nav {
@@ -87,11 +86,19 @@
 }
 
 .bd-masthead h1 {
+    font-size: 4rem;
     line-height: 1;
+}
+
+@media (max-width: 1200px) {
+    .bd-masthead h1 {
+        font-size: calc(1.525rem + 3.3vw);
+    }
 }
 
 .bd-masthead .btn {
     padding: .8rem 2rem;
+    font-size: 1.25rem;
     font-weight: 600;
 }
 
@@ -112,10 +119,6 @@
 }
 
 @media (min-width: 768px) {
-    .bd-masthead h1 {
-        font-size: 4rem;
-    }
-
     .bd-masthead .carbonad {
         margin-top: 3rem !important;
     }
@@ -142,7 +145,7 @@
     padding: 15px 160px 15px 15px;
     margin: 2rem 0;
     overflow: hidden;
-    font-size: 13px;
+    font-size: .8125rem;
     line-height: 1.4;
     text-align: right;
     background-color: rgba(0, 0, 0, .05);
@@ -200,7 +203,6 @@
     .bd-content>table {
         display: block;
         overflow-x: auto;
-        -ms-overflow-style: -ms-autohiding-scrollbar;
     }
 
     .bd-content>table.table-bordered {
@@ -237,6 +239,36 @@
     pointer-events: auto;
 }
 
+.bd-content>h2 {
+    font-size: 2rem;
+}
+
+@media (max-width: 1200px) {
+    .bd-content>h2 {
+        font-size: calc(1.325rem + .9vw);
+    }
+}
+
+.bd-content>h3 {
+    font-size: 1.75rem;
+}
+
+@media (max-width: 1200px) {
+    .bd-content>h3 {
+        font-size: calc(1.3rem + .6vw);
+    }
+}
+
+.bd-content>h4 {
+    font-size: 1.5rem;
+}
+
+@media (max-width: 1200px) {
+    .bd-content>h4 {
+        font-size: calc(1.275rem + .3vw);
+    }
+}
+
 .bd-content>h2:not(:first-child) {
     margin-top: 3rem;
 }
@@ -262,25 +294,30 @@
 .bd-title {
     margin-top: 1rem;
     margin-bottom: .5rem;
+    font-size: 3rem;
     font-weight: 300;
 }
 
-@media (min-width: 576px) {
+@media (max-width: 1200px) {
     .bd-title {
-        font-size: 3rem;
+        font-size: calc(1.425rem + 2.1vw);
     }
 }
 
 .bd-lead {
-    font-size: 1.125rem;
+    font-size: 1.5rem;
     font-weight: 300;
 }
 
-@media (min-width: 576px) {
+@media (max-width: 1200px) {
+    .bd-lead {
+        font-size: calc(1.275rem + .3vw);
+    }
+}
+
+@media (min-width: 992px) {
     .bd-lead {
         max-width: 80%;
-        margin-bottom: 1rem;
-        font-size: 1.5rem;
     }
 }
 
@@ -344,7 +381,7 @@
 .toc-entry a {
     display: block;
     padding: .125rem 1.5rem;
-    color: #99979c;
+    color: #77757a;
 }
 
 .toc-entry a:hover {
@@ -478,7 +515,7 @@
 }
 
 .bd-footer {
-    font-size: 85%;
+    font-size: .875rem;
     text-align: center;
     background-color: #f7f7f7;
 }
@@ -712,11 +749,6 @@
 
 .bd-example>.close {
     float: none;
-}
-
-.bd-example-type .table .type-info {
-    color: #999;
-    vertical-align: middle;
 }
 
 .bd-example-type .table td {
@@ -1069,6 +1101,12 @@
     }
 }
 
+@media (min-width: 768px) and (max-width: 1200px) {
+    .bd-brand-item h1 {
+        font-size: calc(1.525rem + 3.3vw);
+    }
+}
+
 .color-swatches {
     margin: 0 -5px;
     overflow: hidden;
@@ -1294,11 +1332,19 @@
 .bd-placeholder-img {
     font-size: 1.125rem;
     text-anchor: middle;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
 }
 
-@media (min-width: 768px) {
+.bd-placeholder-img-lg {
+    font-size: 3.5rem;
+}
+
+@media (max-width: 1200px) {
     .bd-placeholder-img-lg {
-        font-size: 3.5rem;
+        font-size: calc(1.475rem + 2.7vw);
     }
 }
 

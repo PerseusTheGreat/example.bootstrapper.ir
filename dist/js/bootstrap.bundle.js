@@ -1,5 +1,5 @@
 /*!
-  * Bootstrap v4.2.1 (https://getbootstrap.com/)
+  * Bootstrap v4.3.0 (https://getbootstrap.com/)
   * Copyright 2011-2019 The Bootstrap Authors (https://github.com/twbs/bootstrap/graphs/contributors)
   * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
   */
@@ -69,7 +69,7 @@
 
   /**
    * --------------------------------------------------------------------------
-   * Bootstrap (v4.2.1): util.js
+   * Bootstrap (v4.3.0): util.js
    * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
    * --------------------------------------------------------------------------
    */
@@ -229,7 +229,7 @@
    */
 
   var NAME = 'alert';
-  var VERSION = '4.2.1';
+  var VERSION = '4.3.0';
   var DATA_KEY = 'bs.alert';
   var EVENT_KEY = "." + DATA_KEY;
   var DATA_API_KEY = '.data-api';
@@ -394,7 +394,7 @@
    */
 
   var NAME$1 = 'button';
-  var VERSION$1 = '4.2.1';
+  var VERSION$1 = '4.3.0';
   var DATA_KEY$1 = 'bs.button';
   var EVENT_KEY$1 = "." + DATA_KEY$1;
   var DATA_API_KEY$1 = '.data-api';
@@ -548,7 +548,7 @@
    */
 
   var NAME$2 = 'carousel';
-  var VERSION$2 = '4.2.1';
+  var VERSION$2 = '4.3.0';
   var DATA_KEY$2 = 'bs.carousel';
   var EVENT_KEY$2 = "." + DATA_KEY$2;
   var DATA_API_KEY$2 = '.data-api';
@@ -1148,7 +1148,7 @@
    */
 
   var NAME$3 = 'collapse';
-  var VERSION$3 = '4.2.1';
+  var VERSION$3 = '4.3.0';
   var DATA_KEY$3 = 'bs.collapse';
   var EVENT_KEY$3 = "." + DATA_KEY$3;
   var DATA_API_KEY$3 = '.data-api';
@@ -4087,7 +4087,7 @@
    */
 
   var NAME$4 = 'dropdown';
-  var VERSION$4 = '4.2.1';
+  var VERSION$4 = '4.3.0';
   var DATA_KEY$4 = 'bs.dropdown';
   var EVENT_KEY$4 = "." + DATA_KEY$4;
   var DATA_API_KEY$4 = '.data-api';
@@ -4373,24 +4373,28 @@
       return $(this._element).closest('.navbar').length > 0;
     };
 
-    _proto._getPopperConfig = function _getPopperConfig() {
+    _proto._getOffset = function _getOffset() {
       var _this2 = this;
 
-      var offsetConf = {};
+      var offset = {};
 
       if (typeof this._config.offset === 'function') {
-        offsetConf.fn = function (data) {
-          data.offsets = _objectSpread({}, data.offsets, _this2._config.offset(data.offsets) || {});
+        offset.fn = function (data) {
+          data.offsets = _objectSpread({}, data.offsets, _this2._config.offset(data.offsets, _this2._element) || {});
           return data;
         };
       } else {
-        offsetConf.offset = this._config.offset;
+        offset.offset = this._config.offset;
       }
 
+      return offset;
+    };
+
+    _proto._getPopperConfig = function _getPopperConfig() {
       var popperConfig = {
         placement: this._getPlacement(),
         modifiers: {
-          offset: offsetConf,
+          offset: this._getOffset(),
           flip: {
             enabled: this._config.flip
           },
@@ -4609,7 +4613,7 @@
    */
 
   var NAME$5 = 'modal';
-  var VERSION$5 = '4.2.1';
+  var VERSION$5 = '4.3.0';
   var DATA_KEY$5 = 'bs.modal';
   var EVENT_KEY$5 = "." + DATA_KEY$5;
   var DATA_API_KEY$5 = '.data-api';
@@ -5191,7 +5195,7 @@
    */
 
   var NAME$6 = 'tooltip';
-  var VERSION$6 = '4.2.1';
+  var VERSION$6 = '4.3.0';
   var DATA_KEY$6 = 'bs.tooltip';
   var EVENT_KEY$6 = "." + DATA_KEY$6;
   var JQUERY_NO_CONFLICT$6 = $.fn[NAME$6];
@@ -5206,7 +5210,7 @@
     html: 'boolean',
     selector: '(string|boolean)',
     placement: '(string|function)',
-    offset: '(number|string)',
+    offset: '(number|string|function)',
     container: '(string|element|boolean)',
     fallbackPlacement: '(string|array)',
     boundary: '(string|element)'
@@ -5415,9 +5419,7 @@
         this._popper = new Popper(this.element, tip, {
           placement: attachment,
           modifiers: {
-            offset: {
-              offset: this.config.offset
-            },
+            offset: this._getOffset(),
             flip: {
               behavior: this.config.fallbackPlacement
             },
@@ -5576,6 +5578,23 @@
     } // Private
     ;
 
+    _proto._getOffset = function _getOffset() {
+      var _this3 = this;
+
+      var offset = {};
+
+      if (typeof this.config.offset === 'function') {
+        offset.fn = function (data) {
+          data.offsets = _objectSpread({}, data.offsets, _this3.config.offset(data.offsets, _this3.element) || {});
+          return data;
+        };
+      } else {
+        offset.offset = this.config.offset;
+      }
+
+      return offset;
+    };
+
     _proto._getContainer = function _getContainer() {
       if (this.config.container === false) {
         return document.body;
@@ -5593,27 +5612,27 @@
     };
 
     _proto._setListeners = function _setListeners() {
-      var _this3 = this;
+      var _this4 = this;
 
       var triggers = this.config.trigger.split(' ');
       triggers.forEach(function (trigger) {
         if (trigger === 'click') {
-          $(_this3.element).on(_this3.constructor.Event.CLICK, _this3.config.selector, function (event) {
-            return _this3.toggle(event);
+          $(_this4.element).on(_this4.constructor.Event.CLICK, _this4.config.selector, function (event) {
+            return _this4.toggle(event);
           });
         } else if (trigger !== Trigger.MANUAL) {
-          var eventIn = trigger === Trigger.HOVER ? _this3.constructor.Event.MOUSEENTER : _this3.constructor.Event.FOCUSIN;
-          var eventOut = trigger === Trigger.HOVER ? _this3.constructor.Event.MOUSELEAVE : _this3.constructor.Event.FOCUSOUT;
-          $(_this3.element).on(eventIn, _this3.config.selector, function (event) {
-            return _this3._enter(event);
-          }).on(eventOut, _this3.config.selector, function (event) {
-            return _this3._leave(event);
+          var eventIn = trigger === Trigger.HOVER ? _this4.constructor.Event.MOUSEENTER : _this4.constructor.Event.FOCUSIN;
+          var eventOut = trigger === Trigger.HOVER ? _this4.constructor.Event.MOUSELEAVE : _this4.constructor.Event.FOCUSOUT;
+          $(_this4.element).on(eventIn, _this4.config.selector, function (event) {
+            return _this4._enter(event);
+          }).on(eventOut, _this4.config.selector, function (event) {
+            return _this4._leave(event);
           });
         }
       });
       $(this.element).closest('.modal').on('hide.bs.modal', function () {
-        if (_this3.element) {
-          _this3.hide();
+        if (_this4.element) {
+          _this4.hide();
         }
       });
 
@@ -5867,7 +5886,7 @@
    */
 
   var NAME$7 = 'popover';
-  var VERSION$7 = '4.2.1';
+  var VERSION$7 = '4.3.0';
   var DATA_KEY$7 = 'bs.popover';
   var EVENT_KEY$7 = "." + DATA_KEY$7;
   var JQUERY_NO_CONFLICT$7 = $.fn[NAME$7];
@@ -6054,7 +6073,7 @@
    */
 
   var NAME$8 = 'scrollspy';
-  var VERSION$8 = '4.2.1';
+  var VERSION$8 = '4.3.0';
   var DATA_KEY$8 = 'bs.scrollspy';
   var EVENT_KEY$8 = "." + DATA_KEY$8;
   var DATA_API_KEY$6 = '.data-api';
@@ -6361,7 +6380,7 @@
    */
 
   var NAME$9 = 'tab';
-  var VERSION$9 = '4.2.1';
+  var VERSION$9 = '4.3.0';
   var DATA_KEY$9 = 'bs.tab';
   var EVENT_KEY$9 = "." + DATA_KEY$9;
   var DATA_API_KEY$7 = '.data-api';
@@ -6512,7 +6531,10 @@
       }
 
       Util.reflow(element);
-      $(element).addClass(ClassName$9.SHOW);
+
+      if (element.classList.contains(ClassName$9.FADE)) {
+        element.classList.add(ClassName$9.SHOW);
+      }
 
       if (element.parentNode && $(element.parentNode).hasClass(ClassName$9.DROPDOWN_MENU)) {
         var dropdownElement = $(element).closest(Selector$9.DROPDOWN)[0];
@@ -6593,7 +6615,7 @@
    */
 
   var NAME$a = 'toast';
-  var VERSION$a = '4.2.1';
+  var VERSION$a = '4.3.0';
   var DATA_KEY$a = 'bs.toast';
   var EVENT_KEY$a = "." + DATA_KEY$a;
   var JQUERY_NO_CONFLICT$a = $.fn[NAME$a];
@@ -6777,6 +6799,11 @@
       get: function get() {
         return DefaultType$7;
       }
+    }, {
+      key: "Default",
+      get: function get() {
+        return Default$7;
+      }
     }]);
 
     return Toast;
@@ -6798,7 +6825,7 @@
 
   /**
    * --------------------------------------------------------------------------
-   * Bootstrap (v4.2.1): index.js
+   * Bootstrap (v4.3.0): index.js
    * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
    * --------------------------------------------------------------------------
    */
