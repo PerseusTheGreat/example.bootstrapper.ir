@@ -4784,7 +4784,7 @@ input[type="button"].btn-block {
   border-radius: 0;
 }
 
-.accordion > .card:first-of-type {
+.accordion > .card:first-of-type:not(:last-of-type) {
   border-bottom: 0;
   border-bottom-right-radius: 0;
   border-bottom-left-radius: 0;

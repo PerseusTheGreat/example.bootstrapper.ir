@@ -5,7 +5,7 @@
  * Copyright 2011-2019 Twitter, Inc.
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
  * RTL-ized by Arash Laylazi (https://github.com/PerseusTheGreat)
- * RTL rev. 2 (https://github.com/PerseusTheGreat/bootstrap-rtl)
+ * RTL rev. 3 (https://github.com/PerseusTheGreat/bootstrap-rtl)
  */
 :root {
   --blue: #007bff;
@@ -4813,7 +4813,7 @@ input[type="button"].btn-block {
   border-radius: 0;
 }
 
-.accordion > .card:first-of-type {
+.accordion > .card:first-of-type:not(:last-of-type) {
   border-bottom: 0;
   border-bottom-right-radius: 0;
   border-bottom-left-radius: 0;
