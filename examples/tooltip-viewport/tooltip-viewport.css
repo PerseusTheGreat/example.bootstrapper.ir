@@ -7,13 +7,13 @@ body {
     max-width: 500px;
 }
 
-.tooltip .tooltip-inner {
-    min-width: 250px;
-    max-width: 500px;
-    min-height: 100px;
-    /*text-align: left;*/
-    text-align: right; /*rtl*/
-}
+    .tooltip .tooltip-inner {
+        min-width: 250px;
+        max-width: 500px;
+        min-height: 100px;
+        /*text-align: left;*/
+        text-align: right; /*rtl*/
+    }
 
 .container-viewport {
     position: absolute;

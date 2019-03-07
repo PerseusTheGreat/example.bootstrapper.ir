@@ -4,21 +4,24 @@ $(function () {
     $('.tooltip-left').tooltip({
         placement: 'left',
         offset: 2,
-        container: 'body'
-    })
+        boundary: 'viewport'
+    });
     $('.tooltip-bottom').tooltip({
         placement: 'bottom',
         offset: 2,
-        container: 'body'
-    })
+        boundary: 'viewport'
+    });
+
+    var containerViewPort = document.getElementsByClassName('container-viewport')[0];
+
     $('.tooltip-viewport-left').tooltip({
         placement: 'left',
         offset: 2,
-        container: '.container-viewport'
-    })
+        boundary: containerViewPort
+    });
     $('.tooltip-viewport-bottom').tooltip({
         placement: 'bottom',
         offset: 2,
-        container: '.container-viewport'
-    })
-})
+        boundary: containerViewPort
+    });
+});

@@ -1,20 +1,20 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="fa" dir="rtl">
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
     <meta name="description" content="" />
-    <meta name="author" content="" />
-    <link rel="icon" href="../../favicon.ico" />
+    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors" />
+    <meta name="generator" content="Jekyll v3.8.5" />
+    <title>Dashboard Template · Bootstrap</title>
 
-    <title>Dashboard Template for Bootstrap</title>
+    <link rel="canonical" href="https://perseusthegreat.github.io/bs4rtl-examples/examples/dashboard/" />
 
     <!-- Bootstrap core CSS -->
     <link href="../../dist/css/bootstrap-rtl.min.css" rel="stylesheet" />
 
     <!-- Custom styles for this template -->
     <link href="dashboard.css" rel="stylesheet" />
-    <!--<link href="dashboard.fix.css" rel="stylesheet" />-->
 </head>
 <body>
     <nav class="navbar navbar-dark fixed-top bg-dark flex-md-nowrap p-0 shadow">
@@ -35,8 +35,7 @@
                         <li class="nav-item">
                             <a class="nav-link active" href="#">
                                 <span data-feather="home"></span>
-                                Dashboard
-                                <span class="sr-only">(current)</span>
+                                Dashboard <span class="sr-only">(current)</span>
                             </a>
                         </li>
                         <li class="nav-item">
@@ -73,11 +72,10 @@
 
                     <h6 class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-muted">
                         <span>Saved reports</span>
-                        <a class="d-flex align-items-center text-muted" href="#">
+                        <a class="d-flex align-items-center text-muted" href="#" aria-label="Add a new report">
                             <span data-feather="plus-circle"></span>
                         </a>
                     </h6>
-
                     <ul class="nav flex-column mb-2">
                         <li class="nav-item">
                             <a class="nav-link" href="#">
@@ -122,12 +120,7 @@
                     </div>
                 </div>
 
-                <!-- External BUG: Microsift Edge does not show sticky element on rtl direction -->
-                <!-- https://developer.microsoft.com/en-us/microsoft-edge/platform/issues/15754013/ -->
-                <!-- In Edge 16-, because of above [nav.sidebar>div.sidebar-sticky], you should wrap [canvas#myChart] by a special DIV as below !-->
-                <!--<div style="position: relative; direction: ltr!important;" dir="ltr">-->
                 <canvas class="my-4 w-100" id="myChart" width="900" height="380"></canvas>
-                <!--</div>-->
 
                 <h2>Section title</h2>
                 <div class="table-responsive">
@@ -260,19 +253,10 @@
             </main>
         </div>
     </div>
-
-    <!-- Bootstrap core JavaScript
-    ================================================== -->
-    <!-- Placed at the end of the document so the pages load faster -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery-slim.min.js"><\/script>')</script>
-
     <script src="../../dist/js/bootstrap.bundle.min.js"></script>
-
-    <!-- Icons -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/feather-icons/4.9.0/feather.min.js"></script>
-    
-    <!-- Graphs -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.3/Chart.min.js"></script>
     <script src="dashboard.js"></script>
 </body>

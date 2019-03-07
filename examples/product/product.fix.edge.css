@@ -6,7 +6,5 @@
 @supports (-ms-ime-align:auto) {
     .site-header {
         position: relative;
-        /*-webkit-filter: brightness(1) !important;
-        filter: brightness(1) !important;*/
     }
 }
