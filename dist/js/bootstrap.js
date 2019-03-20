@@ -4409,7 +4409,6 @@
     return Toast._jQueryInterface;
   };
 
-  exports.Util = Util;
   exports.Alert = Alert;
   exports.Button = Button;
   exports.Carousel = Carousel;
@@ -4421,6 +4420,7 @@
   exports.Tab = Tab;
   exports.Toast = Toast;
   exports.Tooltip = Tooltip;
+  exports.Util = Util;
 
   Object.defineProperty(exports, '__esModule', { value: true });
 

@@ -5,7 +5,7 @@
  * Copyright 2011-2019 Twitter, Inc.
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
  * RTL-ized by Arash Laylazi (https://github.com/PerseusTheGreat)
- * RTL rev. 4 (https://github.com/PerseusTheGreat/bootstrap-rtl)
+ * RTL rev. 5 (https://github.com/PerseusTheGreat/bootstrap-rtl)
  */
 :root {
   --blue: #007bff;
@@ -67,7 +67,7 @@ body {
   background-color: #fff;
 }
 
-[tabindex="-1"]:focus {
+[tabindex="-1"]:focus:not(:focus-visible) {
   outline: 0 !important;
 }
 
