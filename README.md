@@ -9,10 +9,10 @@ Example pages of Twitter Bootstrap &copy; in RTL direction
   - Use `<html ... dir="rtl" ... >` for correct PRINT layout and also, because of MSIE cripple😜 layout engine.  
 
 - **Important**:
+  - As you know, [TWBS](https://github.com/twbs/bootstrap) had changed their policies about development and maintenance of version 4.x and they will merge shipped changes in official `v4-dev` branch. Because of their unplanned merges, next RTL revisions will not have been provided weekly. 😞
   - [RTL documentations](http://docs.bootstrapper.ir/) is now online. 😈😎
     - RTL docs have been tested on IE 11, Edge 18, latest Edge beta, latest Firefox, and latest Chrome.
     - Edge 18 has some issues about RTL direction and sticky position
     - New chromium based Edge (beta channel) has some issues about RTL direction and flexbox layouts
-    - Documentation layouts have not been reviewed completely and it is in progress.
+    - Documentation layouts have ~~not~~ been reviewed completely and it is ~~in progress~~ done!
     - RTL docs and [RTL example pages](https://github.com/PerseusTheGreat/bs4rtl-examples) will be combined ASAP.
-  - As you know, [TWBS](https://github.com/twbs/bootstrap) had changed their policies about development and maintenance of version 4.x and they will merge shipped changes in official `v4-dev` branch. Because of their unplanned merges, next RTL revisions will not have been provided weekly. 😞
