@@ -1,1 +1,0 @@
-@supports ((position:-webkit-sticky) or (position:sticky)){@supports (-ms-ime-align:auto){@media (min-width:768px){.bd-navbar{position:relative}.bd-sidebar{position:relative}}.bd-toc{position:relative}}}
