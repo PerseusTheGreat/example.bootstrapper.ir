@@ -1,7 +1,7 @@
 {
   "name": "bs4rtl-examples",
   "version": "4.3.1",
-  "revision": "10",
+  "revision": "11",
   "description": "Example Pages of Tweeter Bootstrap © in RTL direction",
   "author": "Arash Laylazi",
   "repository": {
@@ -9,10 +9,11 @@
     "url": "git+https://github.com/PerseusTheGreat/bs4rtl.git"
   },
   "license": "MIT",
-  "homepage": "https://perseusthegreat.github.io/bs4rtl-examples/",
+  "homepage": "http://docs.bootstrapper.ir/docs/4.3/examples/",
   "main": "index.html",
   "keywords": [
     "bootstrap",
+    "example",
     "rtl",
     "css",
     "mobile-first",
@@ -21,17 +22,7 @@
     "framework",
     "web"
   ],
-  "directories": {
-    "example": "examples",
-    "archive": "archive",
-    "dist": "dist"
-  },
-  "peerDependencies": {
-    "jquery": "1.9.1 - 3",
-    "popper.js": "^1.15.0"
-  },
-  "style": {
-    "official": "dist/css/bootstrap.css",
-    "rtl": "dist/css/bootstrap-rtl.css"
-  }
+  "directories": {},
+  "peerDependencies": {},
+  "style": null
 }
